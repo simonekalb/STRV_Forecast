@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>SchemeUserState</key>
+	<dict>
+		<key>Pods-STRV_Forecast-AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-STRV_Forecast-CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-STRV_Forecast-CrashlyticsFramework.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-STRV_Forecast-MagicalRecord.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-STRV_Forecast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0FC20EB4E5BC05BF5FFBBCF3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>21D2DAC620EB2394832BAF21</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D0F4BD46918ECB08D969806</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>788159F78ED02BB659D65FD5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AA6A082C8E615C19092167E6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
+</dict>
+</plist>
