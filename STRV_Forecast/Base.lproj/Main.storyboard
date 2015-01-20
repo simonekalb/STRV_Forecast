@@ -471,13 +471,133 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d4a-WW-uZY">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="384" id="QU4-Y9-wts"/>
+                                    <constraint firstAttribute="height" constant="800" id="lv9-5w-wHz"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="109" id="Sa0-cX-Cug" customClass="SKCustomForecastCellTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sa0-cX-Cug" id="zIf-Qd-ikh">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tHI-Ws-mMW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="8" y="15" width="80" height="80"/>
+                                                    </variation>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7u-z5-s0K">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="96" y="34" width="63" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzf-Hx-jZR">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="65"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="265" y="9" width="111" height="94"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sunny" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y2U-DX-Zhp">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="96" y="63" width="49" height="21"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="tHI-Ws-mMW"/>
+                                                    <exclude reference="c7u-z5-s0K"/>
+                                                    <exclude reference="gzf-Hx-jZR"/>
+                                                    <exclude reference="Y2U-DX-Zhp"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="tHI-Ws-mMW"/>
+                                                    <include reference="c7u-z5-s0K"/>
+                                                    <include reference="gzf-Hx-jZR"/>
+                                                    <include reference="Y2U-DX-Zhp"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayOfWeek" destination="c7u-z5-s0K" id="NUC-nh-VoZ"/>
+                                            <outlet property="icon" destination="tHI-Ws-mMW" id="zSc-Ui-ETp"/>
+                                            <outlet property="temperature" destination="gzf-Hx-jZR" id="8uD-4V-jfp"/>
+                                            <outlet property="weatherCondition" destination="Y2U-DX-Zhp" id="dg4-Bw-RVM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QU4-Y9-wts"/>
+                                        <exclude reference="lv9-5w-wHz"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QU4-Y9-wts"/>
+                                        <include reference="lv9-5w-wHz"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="8rJ-Kc-sve" id="dKN-sI-Cnl"/>
+                                    <outlet property="delegate" destination="8rJ-Kc-sve" id="WP4-Ni-5Wh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d4a-WW-uZY" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="16" id="7ey-we-Ebu">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-8"/>
+                            </constraint>
+                            <constraint firstItem="d4a-WW-uZY" firstAttribute="top" secondItem="QS5-Rx-YEW" secondAttribute="topMargin" id="O3p-Oh-D1P"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="d4a-WW-uZY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7ey-we-Ebu"/>
+                                <exclude reference="O3p-Oh-D1P"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="d4a-WW-uZY"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7ey-we-Ebu"/>
+                                <include reference="O3p-Oh-D1P"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Forecast" image="Forecast" id="cPa-gy-q4n"/>
+                    <navigationItem key="navigationItem" title="Title" id="Qfq-UM-WcE">
+                        <barButtonItem key="rightBarButtonItem" image="Location" style="plain" id="vmG-S0-JdG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="d4a-WW-uZY" id="elD-6C-DiH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1668" y="355.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="WYY-ef-xUM">
@@ -510,7 +630,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="bXA-B0-eJc" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="GdY-QY-uR4" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="fV1-lz-3Mo" kind="relationship" relationship="viewControllers" id="tPb-hR-YHn"/>
                     </connections>
                 </tabBarController>
@@ -557,6 +677,25 @@
             </objects>
             <point key="canvasLocation" x="750" y="1047.75"/>
         </scene>
+        <!--Forecast-->
+        <scene sceneID="Lg5-tD-m1K">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GdY-QY-uR4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Forecast" image="Forecast" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9V7-4l-WUF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="rootViewController" id="gEk-F4-xFS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vnu-Cm-UWd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
     </scenes>
     <resources>
         <image name="CR" width="22" height="22"/>
@@ -565,6 +704,7 @@
         <image name="Compass" width="17" height="17"/>
         <image name="Forecast" width="23" height="22"/>
         <image name="Line" width="234" height="1"/>
+        <image name="Location" width="22" height="14"/>
         <image name="Rain" width="16" height="19"/>
         <image name="Settings" width="23" height="23"/>
         <image name="Today" width="24" height="24"/>
