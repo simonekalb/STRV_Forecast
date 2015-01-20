@@ -7,6 +7,7 @@
 //
 
 #import "SKForecastViewController.h"
+#import "SKCustomForecastCellTableViewCell.h"
 
 @interface SKForecastViewController ()
 
@@ -16,13 +17,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self setTitle:NSLocalizedString(@"Forecast", nil)];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 6;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellIdentifier = @"Cell";
+    
+    SKCustomForecastCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        cell = [[SKCustomForecastCellTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    cell.temperature.text  = @"33°";
+    cell.dayOfWeek.text = @"Monday";
+    cell.weatherCondition.text  = @"Sunny";
+    
+    return cell;
+}
+
 
 /*
 #pragma mark - Navigation
