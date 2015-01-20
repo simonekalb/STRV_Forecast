@@ -139,7 +139,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-Ar-rj7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.0 mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnC-Ar-rj7">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="26" id="VWz-1V-PIU"/>
@@ -164,7 +164,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1019hPa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NU3-mZ-hY2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1019 hPa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NU3-mZ-hY2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -272,16 +272,15 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="123" y="359" width="62" height="26"/>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="107" y="438" width="66" height="26"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="0uv-qF-qvV" firstAttribute="top" secondItem="XaI-al-sJK" secondAttribute="bottom" constant="36" id="4Jr-RU-Ncl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NU3-mZ-hY2" secondAttribute="trailing" constant="30" id="4xm-Xj-24l"/>
-                            <constraint firstItem="yqP-Re-VC4" firstAttribute="centerX" secondItem="0uv-qF-qvV" secondAttribute="centerX" id="5Dx-I6-E2r"/>
+                            <constraint firstItem="yqP-Re-VC4" firstAttribute="centerX" secondItem="0uv-qF-qvV" secondAttribute="centerX" id="5Dx-I6-E2r">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-4"/>
+                            </constraint>
                             <constraint firstItem="UZp-cY-w2J" firstAttribute="top" secondItem="NU3-mZ-hY2" secondAttribute="bottom" constant="28" id="9pM-Uc-JzT"/>
                             <constraint firstItem="UZp-cY-w2J" firstAttribute="leading" secondItem="ucC-Gf-A3D" secondAttribute="trailing" constant="100" id="9yS-MM-nlP"/>
                             <constraint firstItem="xnC-Ar-rj7" firstAttribute="baseline" secondItem="NU3-mZ-hY2" secondAttribute="baseline" id="BoE-ct-Hbf"/>
@@ -307,8 +306,12 @@
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="NfP-m2-uJJ" secondAttribute="trailing" constant="78" id="Sgn-yI-LDB"/>
                             <constraint firstItem="vpU-Rj-Hxq" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="22" id="SwH-4f-gFa"/>
-                            <constraint firstItem="yqP-Re-VC4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="71" id="VCh-KF-Dri"/>
-                            <constraint firstItem="NfP-m2-uJJ" firstAttribute="leading" secondItem="s6K-x7-tFh" secondAttribute="trailing" constant="48" id="W33-2D-UUP"/>
+                            <constraint firstItem="yqP-Re-VC4" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="71" id="VCh-KF-Dri">
+                                <variation key="heightClass=regular-widthClass=compact" constant="24"/>
+                            </constraint>
+                            <constraint firstItem="NfP-m2-uJJ" firstAttribute="leading" secondItem="s6K-x7-tFh" secondAttribute="trailing" constant="48" id="W33-2D-UUP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="55"/>
+                            </constraint>
                             <constraint firstItem="4t0-YJ-hLO" firstAttribute="leading" secondItem="ErZ-3R-DnT" secondAttribute="trailing" constant="92" id="aRO-ym-dFJ"/>
                             <constraint firstItem="xnC-Ar-rj7" firstAttribute="leading" secondItem="vpU-Rj-Hxq" secondAttribute="trailing" constant="32" id="bX7-dn-2PX"/>
                             <constraint firstItem="ucC-Gf-A3D" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="110" id="cro-iR-4mt"/>
