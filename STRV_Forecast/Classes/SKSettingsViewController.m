@@ -22,6 +22,17 @@
     self.formController.form = [[SKSettingsForm alloc] init];
 }
 
+-(void)updateLenght {
+    
+    SKSettingsForm *form = (SKSettingsForm *)self.formController.form;
+    [SETTINGS storeBool:form.lenghtUnits forKey:@"lenghtUnits"];
+    
+}
+
+-(void)updateDegree {
+    SKSettingsForm *form = (SKSettingsForm *)self.formController.form;
+    [SETTINGS storeBool:form.degreeUnits forKey:@"degreeUnits"];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

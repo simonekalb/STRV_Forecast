@@ -14,8 +14,8 @@
 {
     return @[
              @{FXFormFieldHeader: @"General",
-               FXFormFieldKey: @"lenghtUnits", FXFormFieldOptions: @[@"Meters", @"Inches"]},
-             @{FXFormFieldKey: @"degreeUnits", FXFormFieldOptions: @[@"Celsius", @"Fahrenheit"]},
+               FXFormFieldKey: @"lenghtUnits", FXFormFieldOptions: @[@"Meters", @"Inches"], FXFormFieldAction: @"updateLenght"},
+             @{FXFormFieldKey: @"degreeUnits", FXFormFieldOptions: @[@"Celsius", @"Fahrenheit"], FXFormFieldAction: @"updateDegree"},
              ];
 }
 

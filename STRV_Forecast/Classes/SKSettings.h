@@ -8,6 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+@class Forecast;
+
+typedef NS_ENUM(NSInteger, Lenght)
+{
+    Meters = 0,
+    Inches
+    
+};
+
+typedef NS_ENUM(NSInteger, Temperature)
+{
+    Celsius = 0,
+    Fahrenheit
+};
+
+
+
 // Shortcut for calling this class
 #define SETTINGS [SKSettings sharedInstance]
 
@@ -34,8 +51,30 @@
 
 +(SKSettings *) sharedInstance;
 
-/* Core Data/ Magical Panda support utilities */
+/* Practical functions to store/retrieve values from/to NSUserDefault */
+-(void)storeValue:(id)value forKey:(NSString *)key;
+-(id)retrieveValueForKey: (NSString *)key;
+-(void)deleteValueForKey: (NSString *)key;
+-(void)storeBool:(BOOL)value forKey:(NSString *)key;
+-(BOOL)retrieveBoolForKey:(NSString *)key;
+
+/* iPhone/iPad recognition routines */
+-(BOOL)isRetina;
+-(BOOL)isiOS7;
+-(BOOL)isiOS6;
+-(BOOL)isiPad;
+-(BOOL)isiPhone;
+-(BOOL)isiPhone4;
+-(BOOL)isiPhone5;
+
+
+/* Core Data/Magical Panda support utilities */
 - (void)saveContext;
 
 
+/* Units convertion utilities */
+-(NSString *)chooseTemperature:(Temperature)temperature forObject:(Forecast *)forecast;
+-(NSString *)chooseLenght:(Lenght)lenght forObject:(Forecast *)forecast;
+-(NSString *)tempToString:(Temperature)temperature;
+-(NSString *)lenghtToString:(Lenght)lenght;
 @end

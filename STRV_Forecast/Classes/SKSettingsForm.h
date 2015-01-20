@@ -9,19 +9,6 @@
 #import <Foundation/Foundation.h>
 #import <FXForms.h>
 
-typedef NS_ENUM(NSInteger, Lenght)
-{
-    Meters = 0,
-    Inches
-    
-};
-
-typedef NS_ENUM(NSInteger, Temperature)
-{
-    Celsius = 0,
-    Fahrenheit
-};
-
 
 @interface SKSettingsForm : NSObject<FXForm>
 

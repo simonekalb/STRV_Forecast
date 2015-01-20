@@ -13,6 +13,8 @@
 
 @interface SKTodayViewController ()
 @property(nonatomic, strong) Forecast *currentCity;
+@property(nonatomic) Lenght lenghtUnits;
+@property(nonatomic) Temperature degreeUnits;
 @end
 
 @implementation SKTodayViewController
@@ -21,12 +23,33 @@
     
     [super viewDidLoad];
     [self setTitle:NSLocalizedString(@"Today", nil)];
+    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(savedForecastReeceived:) name:CURRENT_FORECAST object:nil];
+    
+ 
+    
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    
+    // Retrieving units from settings
+    _lenghtUnits = [SETTINGS retrieveBoolForKey:@"lenghtUnits"];
+    _degreeUnits = [SETTINGS retrieveBoolForKey:@"degreeUnits"];
+    
+    if (!_lenghtUnits) {
+        _lenghtUnits = Meters;
+    }
+    
+    if (!_degreeUnits) {
+        _degreeUnits = Celsius;
+    }
     
     SKWWOAPI *api = [SKWWOAPI new];
     [api forwardRequest:@"London"];
-    
-    
 }
 
 -(void)savedForecastReeceived:(NSNotification *)notification {
@@ -43,16 +66,26 @@
 -(void)showConditions:(Forecast *)forecast {
     
     _cityCountry.text = forecast.city;
-    _temperatureAndCondition.text = [NSString stringWithFormat:@"%@ %@  |  %@", forecast.temperature_c, @"°C", forecast.condition];
+    
+    /* Choosing the right units for temperature according to settings */
+    _temperatureAndCondition.text = [NSString stringWithFormat:@"%@ %@  |  %@",
+                                     [SETTINGS chooseTemperature:_degreeUnits forObject:forecast],
+                                     [SETTINGS tempToString:_degreeUnits],
+                                     forecast.condition];
+    
     _chanceOfRain.text = [NSString stringWithFormat:@"%@ %%", forecast.chance_rain];
+    
     _mmRain.text = [NSString stringWithFormat:@"%@ mm", forecast.precipitation];
     _wind16.text = forecast.wind_direction;
-    _windSpeed.text = [NSString stringWithFormat:@"%@ Km/h",forecast.wind_speed_km];
+    
+    /* Choosing the right units for lenght according to settings */
+    _windSpeed.text = [NSString stringWithFormat:@"%@ %@",
+                       [SETTINGS chooseLenght:_lenghtUnits forObject:forecast],
+                       [SETTINGS lenghtToString:_lenghtUnits]];
+    
     _pressure.text = [NSString stringWithFormat:@"%@ hPa", forecast.pressure];
     
 }
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
