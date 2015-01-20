@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140AAFAB1A6E7DB20003F905 /* Forecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFA91A6E7DB20003F905 /* Forecast.xcdatamodeld */; };
+		140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFAD1A6E7DD50003F905 /* Forecast.m */; };
+		140AAFB11A6E7DD60003F905 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFB01A6E7DD60003F905 /* City.m */; };
+		1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1443E2431A6E743F0002A9B9 /* SKSettings.m */; };
 		14ECEA471A6D19B000653B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA461A6D19B000653B5A /* main.m */; };
 		14ECEA4A1A6D19B000653B5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA491A6D19B000653B5A /* AppDelegate.m */; };
 		14ECEA531A6D19B000653B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14ECEA511A6D19B000653B5A /* Main.storyboard */; };
@@ -21,9 +25,6 @@
 		14ECEA861A6D857100653B5A /* SKSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA851A6D857100653B5A /* SKSettingsViewController.m */; };
 		14ECEA891A6D858D00653B5A /* SKForecastViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA881A6D858D00653B5A /* SKForecastViewController.m */; };
 		14ECEA8B1A6D8C8900653B5A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14ECEA8A1A6D8C8900653B5A /* Images.xcassets */; };
-		14ECEA8E1A6DA4F200653B5A /* Forecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA8C1A6DA4F200653B5A /* Forecast.xcdatamodeld */; };
-		14ECEA911A6DA63700653B5A /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA901A6DA63700653B5A /* Forecast.m */; };
-		14ECEA941A6DA63800653B5A /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA931A6DA63800653B5A /* City.m */; };
 		E2F2D29C7DDF4A3B42E7FDEC /* libPods-STRV_Forecast.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB9FA3E78F4F2A74DC9FC8EC /* libPods-STRV_Forecast.a */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140AAFAA1A6E7DB20003F905 /* Forecast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Forecast.xcdatamodel; sourceTree = "<group>"; };
+		140AAFAC1A6E7DD50003F905 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Forecast.h; path = Classes/Forecast.h; sourceTree = "<group>"; };
+		140AAFAD1A6E7DD50003F905 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Forecast.m; path = Classes/Forecast.m; sourceTree = "<group>"; };
+		140AAFAF1A6E7DD60003F905 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = "<group>"; };
+		140AAFB01A6E7DD60003F905 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = "<group>"; };
+		1443E2411A6E6CFF0002A9B9 /* STRV-Forecast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STRV-Forecast-Prefix.pch"; sourceTree = "<group>"; };
+		1443E2421A6E743F0002A9B9 /* SKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSettings.h; path = Classes/SKSettings.h; sourceTree = "<group>"; };
+		1443E2431A6E743F0002A9B9 /* SKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettings.m; path = Classes/SKSettings.m; sourceTree = "<group>"; };
 		14ECEA411A6D19B000653B5A /* STRV_Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRV_Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14ECEA451A6D19B000653B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14ECEA461A6D19B000653B5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -63,11 +72,6 @@
 		14ECEA871A6D858D00653B5A /* SKForecastViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKForecastViewController.h; path = Classes/SKForecastViewController.h; sourceTree = "<group>"; };
 		14ECEA881A6D858D00653B5A /* SKForecastViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKForecastViewController.m; path = Classes/SKForecastViewController.m; sourceTree = "<group>"; };
 		14ECEA8A1A6D8C8900653B5A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = STRV_ForecastTests/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		14ECEA8D1A6DA4F200653B5A /* Forecast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Forecast.xcdatamodel; sourceTree = "<group>"; };
-		14ECEA8F1A6DA63700653B5A /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Forecast.h; path = Classes/Forecast.h; sourceTree = "<group>"; };
-		14ECEA901A6DA63700653B5A /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Forecast.m; path = Classes/Forecast.m; sourceTree = "<group>"; };
-		14ECEA921A6DA63800653B5A /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = "<group>"; };
-		14ECEA931A6DA63800653B5A /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = "<group>"; };
 		52621258F38D250C5AE1C57E /* Pods-STRV_Forecast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STRV_Forecast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-STRV_Forecast/Pods-STRV_Forecast.debug.xcconfig"; sourceTree = "<group>"; };
 		C33BE1BC162922E0FB76F209 /* Pods-STRV_Forecast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-STRV_Forecast.release.xcconfig"; path = "Pods/Target Support Files/Pods-STRV_Forecast/Pods-STRV_Forecast.release.xcconfig"; sourceTree = "<group>"; };
 		EB9FA3E78F4F2A74DC9FC8EC /* libPods-STRV_Forecast.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-STRV_Forecast.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +138,8 @@
 		14ECEA441A6D19B000653B5A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				140AAFA91A6E7DB20003F905 /* Forecast.xcdatamodeld */,
+				1443E2411A6E6CFF0002A9B9 /* STRV-Forecast-Prefix.pch */,
 				14ECEA731A6D279000653B5A /* Crashlytics.framework */,
 				14ECEA451A6D19B000653B5A /* Info.plist */,
 				14ECEA461A6D19B000653B5A /* main.m */,
@@ -161,15 +167,16 @@
 		14ECEA6D1A6D1A0900653B5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				140AAFAF1A6E7DD60003F905 /* City.h */,
+				140AAFB01A6E7DD60003F905 /* City.m */,
+				140AAFAC1A6E7DD50003F905 /* Forecast.h */,
+				140AAFAD1A6E7DD50003F905 /* Forecast.m */,
+				1443E2421A6E743F0002A9B9 /* SKSettings.h */,
+				1443E2431A6E743F0002A9B9 /* SKSettings.m */,
 				14ECEA751A6D3C6700653B5A /* SKWWOAPI.h */,
 				14ECEA761A6D3C6700653B5A /* SKWWOAPI.m */,
 				14ECEA781A6D401800653B5A /* SKQueryBuilder.h */,
 				14ECEA791A6D401800653B5A /* SKQueryBuilder.m */,
-				14ECEA8C1A6DA4F200653B5A /* Forecast.xcdatamodeld */,
-				14ECEA921A6DA63800653B5A /* City.h */,
-				14ECEA931A6DA63800653B5A /* City.m */,
-				14ECEA8F1A6DA63700653B5A /* Forecast.h */,
-				14ECEA901A6DA63700653B5A /* Forecast.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -372,14 +379,15 @@
 			files = (
 				14ECEA831A6D854A00653B5A /* SKTodayViewController.m in Sources */,
 				14ECEA891A6D858D00653B5A /* SKForecastViewController.m in Sources */,
-				14ECEA911A6DA63700653B5A /* Forecast.m in Sources */,
+				140AAFB11A6E7DD60003F905 /* City.m in Sources */,
 				14ECEA4A1A6D19B000653B5A /* AppDelegate.m in Sources */,
+				140AAFAB1A6E7DB20003F905 /* Forecast.xcdatamodeld in Sources */,
 				14ECEA471A6D19B000653B5A /* main.m in Sources */,
-				14ECEA941A6DA63800653B5A /* City.m in Sources */,
+				140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */,
+				1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */,
 				14ECEA861A6D857100653B5A /* SKSettingsViewController.m in Sources */,
 				14ECEA7F1A6D653400653B5A /* WorldWeatherOnline.m in Sources */,
 				14ECEA7A1A6D401800653B5A /* SKQueryBuilder.m in Sources */,
-				14ECEA8E1A6DA4F200653B5A /* Forecast.xcdatamodeld in Sources */,
 				14ECEA771A6D3C6700653B5A /* SKWWOAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +515,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/STRV_Forecast",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/STRV_Forecast/STRV-Forecast-Prefix.pch";
 				INFOPLIST_FILE = STRV_Forecast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -524,6 +534,8 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/STRV_Forecast",
 				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/STRV_Forecast/STRV-Forecast-Prefix.pch";
 				INFOPLIST_FILE = STRV_Forecast/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -599,12 +611,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		14ECEA8C1A6DA4F200653B5A /* Forecast.xcdatamodeld */ = {
+		140AAFA91A6E7DB20003F905 /* Forecast.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				14ECEA8D1A6DA4F200653B5A /* Forecast.xcdatamodel */,
+				140AAFAA1A6E7DB20003F905 /* Forecast.xcdatamodel */,
 			);
-			currentVersion = 14ECEA8D1A6DA4F200653B5A /* Forecast.xcdatamodel */;
+			currentVersion = 140AAFAA1A6E7DB20003F905 /* Forecast.xcdatamodel */;
 			path = Forecast.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

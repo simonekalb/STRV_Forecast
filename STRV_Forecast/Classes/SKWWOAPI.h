@@ -13,5 +13,5 @@
 
 @interface SKWWOAPI : NSObject <WorldWeatherOnlineDelegate>
 
--(void)forwardRequest;
+-(void)forwardRequest:(NSString *)cityName;
 @end

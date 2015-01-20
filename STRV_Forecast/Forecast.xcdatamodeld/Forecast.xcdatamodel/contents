@@ -4,12 +4,13 @@
         <attribute name="latitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Forecast" syncable="YES"/>
+        <relationship name="detail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Forecast" inverseName="relationship" inverseEntity="Forecast" syncable="YES"/>
     </entity>
     <entity name="Forecast" representedClassName="Forecast" syncable="YES">
         <attribute name="chance_rain" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isCurrent" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="precipitation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pressure" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="temperature_c" optional="YES" attributeType="String" syncable="YES"/>
@@ -17,9 +18,10 @@
         <attribute name="wind_direction" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wind_speed_km" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wind_speed_mi" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="detail" inverseEntity="City" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Forecast" positionX="-63" positionY="-18" width="128" height="193"/>
-        <element name="City" positionX="-54" positionY="63" width="128" height="103"/>
+        <element name="City" positionX="-54" positionY="63" width="128" height="105"/>
+        <element name="Forecast" positionX="-63" positionY="-18" width="128" height="223"/>
     </elements>
 </model>
