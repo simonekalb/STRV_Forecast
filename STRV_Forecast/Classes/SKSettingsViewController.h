@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FXForms.h>
+#import "SKSettingsForm.h"
 
-@interface SKSettingsViewController : UIViewController
+@interface SKSettingsViewController : FXFormViewController
 
 @end

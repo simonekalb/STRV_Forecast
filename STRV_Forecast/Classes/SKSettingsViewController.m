@@ -14,9 +14,18 @@
 
 @implementation SKSettingsViewController
 
+- (void)awakeFromNib
+{
+    [self setTitle:NSLocalizedString(@"Settings", nil)];
+    
+    //Setting up form
+    self.formController.form = [[SKSettingsForm alloc] init];
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
 
 - (void)didReceiveMemoryWarning {

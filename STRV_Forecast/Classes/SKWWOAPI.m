@@ -32,6 +32,7 @@
 //    [wwo searchLocation:@"London"];
     
     // Request local weather data by a city name
+    
     [wwo getWeather:cityName];
     
 }
@@ -42,19 +43,6 @@
 }
 
 - (void)requestSucces:(NSDictionary *)data {
-    
-    NSLog(@"--------------------------------\n\n");
-    NSLog(@"Current Condition for %@", data[@"request"][0][@"query"]);
-    NSLog(@"Current Temperature in C: %@", data[@"current_condition"][0][@"temp_C"]);
-    NSLog(@"Current Temperature in F: %@", data[@"current_condition"][0][@"temp_F"]);
-    NSLog(@"Type of condition: %@", data[@"current_condition"][0][@"weatherDesc"][0][@"value"]);
-    NSLog(@"Chance of rain: %@", data[@"weather"][0][@"hourly"][0][@"chanceofrain"]
-          );
-    NSLog(@"Precipitation in mm: %@", data[@"current_condition"][0][@"precipMM"]);
-    NSLog(@"Atmospheric Pressure: %@", data[@"weather"][0][@"hourly"][0][@"pressure"]);
-    NSLog(@"Wind Speed KM: %@", data[@"current_condition"][0][@"windspeedKmph"]);
-    NSLog(@"Wind Speed Miles: %@", data[@"current_condition"][0][@"windspeedMiles"]);
-    NSLog(@"Wind Direction: %@", data[@"current_condition"][0][@"winddir16Point"]);
     
     /* Create items in the database for current location weather */
     Forecast *currentForecast = [Forecast MR_createEntity];
