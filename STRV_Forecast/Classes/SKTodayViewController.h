@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SKTodayViewController : UIViewController
+@interface SKTodayViewController : UIViewController<UIActionSheetDelegate>
 
 @property(strong, nonatomic) IBOutlet UIImageView *conditionIcon;
 @property(strong, nonatomic) IBOutlet UILabel *temperatureAndCondition;
@@ -18,5 +18,8 @@
 @property(strong, nonatomic) IBOutlet UILabel *pressure;
 @property(strong, nonatomic) IBOutlet UILabel *windSpeed;
 @property(strong, nonatomic) IBOutlet UILabel *wind16;
+@property(strong, nonatomic) IBOutlet UIButton *shareButton;
+
+-(IBAction)sharePressed:(id)sender;
 
 @end

@@ -92,6 +92,25 @@
    
 }
 
+-(IBAction)sharePressed:(id)sender {
+    [self shareText:[NSString stringWithFormat:@"Today Forecast for %@", _cityCountry] andUrl:[NSURL URLWithString:@"http://www.worldweatheronline.com"]];
+}
+
+- (void)shareText:(NSString *)text andUrl:(NSURL *)url
+{
+    NSMutableArray *sharingItems = [NSMutableArray new];
+    
+    if (text) {
+        [sharingItems addObject:text];
+    }
+    if (url) {
+        [sharingItems addObject:url];
+    }
+    
+    UIActivityViewController *activityController = [[UIActivityViewController alloc] initWithActivityItems:sharingItems applicationActivities:nil];
+    [self presentViewController:activityController animated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 
