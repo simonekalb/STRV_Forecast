@@ -42,6 +42,7 @@
     cell.temperature.text  = @"33°";
     cell.dayOfWeek.text = @"Monday";
     cell.weatherCondition.text  = @"Sunny";
+    [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
     
     return cell;
 }

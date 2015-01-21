@@ -51,8 +51,8 @@
 		1443E2431A6E743F0002A9B9 /* SKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettings.m; path = Classes/SKSettings.m; sourceTree = "<group>"; };
 		147C41F01A6EBD0200B32D50 /* SKSettingsForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSettingsForm.h; path = Classes/SKSettingsForm.h; sourceTree = "<group>"; };
 		147C41F11A6EBD0200B32D50 /* SKSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettingsForm.m; path = Classes/SKSettingsForm.m; sourceTree = "<group>"; };
-		14BC3ECF1A6F115300799247 /* SKCustomForecastCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCustomForecastCellTableViewCell.h; path = STRV_Forecast/Classes/SKCustomForecastCellTableViewCell.h; sourceTree = "<group>"; };
-		14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKCustomForecastCellTableViewCell.m; path = STRV_Forecast/Classes/SKCustomForecastCellTableViewCell.m; sourceTree = "<group>"; };
+		14BC3ECF1A6F115300799247 /* SKCustomForecastCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCustomForecastCellTableViewCell.h; path = Classes/SKCustomForecastCellTableViewCell.h; sourceTree = "<group>"; };
+		14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKCustomForecastCellTableViewCell.m; path = Classes/SKCustomForecastCellTableViewCell.m; sourceTree = "<group>"; };
 		14ECEA411A6D19B000653B5A /* STRV_Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRV_Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14ECEA451A6D19B000653B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14ECEA461A6D19B000653B5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -103,11 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		14ECEA381A6D19AF00653B5A = {
+		149DEEB21A6FA8B00050A54E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				14BC3ECF1A6F115300799247 /* SKCustomForecastCellTableViewCell.h */,
 				14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		14ECEA381A6D19AF00653B5A = {
+			isa = PBXGroup;
+			children = (
 				14ECEA431A6D19B000653B5A /* STRV_Forecast */,
 				14ECEA601A6D19B000653B5A /* STRV_ForecastTests */,
 				14ECEA421A6D19B000653B5A /* Products */,
@@ -201,6 +208,7 @@
 		14ECEA6F1A6D1A2000653B5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				149DEEB21A6FA8B00050A54E /* Cells */,
 				14ECEA811A6D854A00653B5A /* SKTodayViewController.h */,
 				14ECEA821A6D854A00653B5A /* SKTodayViewController.m */,
 				14ECEA841A6D857100653B5A /* SKSettingsViewController.h */,
