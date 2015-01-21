@@ -10,6 +10,7 @@
 
 #import "SKWWOAPI.h"
 #import "Forecast.h"
+#import "Future.h"
 #import "City.h"
 
 #define API_KEY @"8078210c20e2d625bb0157b622cce"
@@ -44,6 +45,9 @@
 
 - (void)requestSucces:(NSDictionary *)data {
     
+    /* Remove all Object from this city */
+    [self deleteAllByCity:@"London"];
+    
     /* Create items in the database for current location weather */
     Forecast *currentForecast = [Forecast MR_createEntity];
     
@@ -61,14 +65,33 @@
     // Remember to initialize all other cities to NO
     currentForecast.isCurrent = YES;
     
-    /*
-    currentForecast.relationship.latitude =
-    currentForecast.relationship.longitude =
-    */
+    [self deleteAllByFuture];
+    /* Storing directly future forecast for forecast view visualization */
+    for (NSDictionary *futureForecast in data[@"weather"]) {
+        Future *fForecast = [Future MR_createEntity];
+        fForecast.date = futureForecast[@"date"];
+        fForecast.temperature_c = futureForecast[@"hourly"][0][@"tempC"];
+        fForecast.temperature_f = futureForecast[@"hourly"][0][@"tempF"];
+        fForecast.condition = futureForecast[@"hourly"][0][@"weatherDesc"][0][@"value"];
+    }
     
     [SETTINGS saveContext];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:CURRENT_FORECAST object:nil];
 }
-    
+
+-(void)deleteAllByCity:(NSString *)city {
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"city == %@", city];
+    [Forecast MR_deleteAllMatchingPredicate:predicate];
+    [SETTINGS saveContext];
+}
+
+-(void)deleteAllByFuture {
+    NSArray *allObj = [Future MR_findAll];
+    for (Future *object in allObj) {
+        [object MR_deleteEntity];
+    }
+    [SETTINGS saveContext];
+}
+
 @end

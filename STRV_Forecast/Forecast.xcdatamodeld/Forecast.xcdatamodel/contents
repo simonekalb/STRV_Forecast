@@ -18,10 +18,19 @@
         <attribute name="wind_direction" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wind_speed_km" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wind_speed_mi" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="future" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Future" inverseName="current" inverseEntity="Future" syncable="YES"/>
         <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="City" inverseName="detail" inverseEntity="City" syncable="YES"/>
+    </entity>
+    <entity name="Future" representedClassName="Future" syncable="YES">
+        <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperature_c" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="temperature_f" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Forecast" inverseName="future" inverseEntity="Forecast" syncable="YES"/>
     </entity>
     <elements>
         <element name="City" positionX="-54" positionY="63" width="128" height="105"/>
-        <element name="Forecast" positionX="-63" positionY="-18" width="128" height="223"/>
+        <element name="Forecast" positionX="-63" positionY="-18" width="128" height="238"/>
+        <element name="Future" positionX="-54" positionY="81" width="128" height="118"/>
     </elements>
 </model>

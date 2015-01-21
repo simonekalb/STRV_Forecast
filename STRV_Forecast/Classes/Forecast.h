@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class City;
+@class City, Future;
 
 @interface Forecast : NSManagedObject
 
@@ -23,7 +23,10 @@
 @property (nonatomic, retain) NSString * wind_direction;
 @property (nonatomic, retain) NSString * wind_speed_km;
 @property (nonatomic, retain) NSString * wind_speed_mi;
-@property (nonatomic) BOOL isCurrent;
+
+@property (nonatomic, retain) Future * future;
 @property (nonatomic, retain) City *relationship;
+
+@property (nonatomic) BOOL isCurrent;
 
 @end

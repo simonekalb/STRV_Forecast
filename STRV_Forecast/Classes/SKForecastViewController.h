@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SKForecastViewController : UIViewController
-
+@interface SKForecastViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@property(strong, nonatomic) IBOutlet UITableView *tableView;
 @end

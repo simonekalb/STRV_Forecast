@@ -8,6 +8,7 @@
 
 #import "SKSettings.h"
 #import "Forecast.h"
+#import "Future.h"
 
 @implementation SKSettings
 
@@ -109,10 +110,22 @@ static SKSettings* _sharedInstance;
 
 #pragma mark - Units convertion support functions
 
--(NSString *)chooseTemperature:(Temperature)temperature forObject:(Forecast *)forecast {
-    if(temperature == Celsius)
-        return forecast.temperature_c;
-    return forecast.temperature_f;
+-(NSString *)chooseTemperature:(Temperature)temperature forObject:(id)forecast {
+    
+    if([forecast isMemberOfClass:[Forecast class]]) {
+        Forecast *fore = (Forecast *)forecast;
+        if(temperature == Celsius) {
+            return fore.temperature_c;
+        }
+        return fore.temperature_f;
+    }
+    
+    Future *future =(Future *)forecast;
+    if(temperature == Celsius) {
+        return future.temperature_c;
+    }
+    return future.temperature_f;
+                     
 }
 
 -(NSString *)chooseLenght:(Lenght)lenght forObject:(Forecast *)forecast {

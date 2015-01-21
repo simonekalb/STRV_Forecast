@@ -73,7 +73,7 @@ typedef NS_ENUM(NSInteger, Temperature)
 
 
 /* Units convertion utilities */
--(NSString *)chooseTemperature:(Temperature)temperature forObject:(Forecast *)forecast;
+-(NSString *)chooseTemperature:(Temperature)temperature forObject:(id)forecast;
 -(NSString *)chooseLenght:(Lenght)lenght forObject:(Forecast *)forecast;
 -(NSString *)tempToString:(Temperature)temperature;
 -(NSString *)lenghtToString:(Lenght)lenght;
