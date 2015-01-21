@@ -1,14 +1,14 @@
 //
-//  SKCustomForecastCellTableViewCell.m
+//  SKTableViewCell.m
 //  STRV_Forecast
 //
-//  Created by Simone Kalb on 20/01/15.
+//  Created by Simone Kalb on 21/01/15.
 //  Copyright (c) 2015 Simone Kalb. All rights reserved.
 //
 
-#import "SKCustomForecastCellTableViewCell.h"
+#import "SKTableViewCell.h"
 
-@implementation SKCustomForecastCellTableViewCell
+@implementation SKTableViewCell
 
 - (void)awakeFromNib {
     // Initialization code

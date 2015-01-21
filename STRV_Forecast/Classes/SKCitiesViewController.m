@@ -1,35 +1,31 @@
 //
-//  SKForecastViewController.m
+//  SKCitiesViewController.m
 //  STRV_Forecast
 //
-//  Created by Simone Kalb on 19/01/15.
+//  Created by Simone Kalb on 21/01/15.
 //  Copyright (c) 2015 Simone Kalb. All rights reserved.
 //
 
-#import "SKForecastViewController.h"
+#import "SKCitiesViewController.h"
 #import "SKTableViewCell.h"
-#import "Future.h"
+#import "City.h"
 
-@interface SKForecastViewController ()
-@property(strong, nonatomic) NSMutableArray *daysForecast;
+@interface SKCitiesViewController ()
+@property(strong, nonatomic) NSMutableArray *cities;
 @end
 
-@implementation SKForecastViewController
+@implementation SKCitiesViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _daysForecast = [NSMutableArray new];
-    _daysForecast = [[Future MR_findAll] mutableCopy];
+    _cities = [NSMutableArray new];
+    _cities = [[City MR_findAll] mutableCopy];
     
     NSString* name = [[SKTableViewCell class] description];
     UINib* nib = [UINib nibWithNibName:name bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:name];
-    [self setTitle:NSLocalizedString(@"Forecast", nil)];
-}
 
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [_tableView reloadData];
+    [self setTitle:NSLocalizedString(@"Location", nil)];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [_daysForecast count];
+    return [_cities count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -52,8 +48,8 @@
     if (cell == nil) {
         cell = [[SKTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:name];
     }
-    Future *currentDay = [_daysForecast objectAtIndex:indexPath.row];
-    
+    City *currentCity = [_cities objectAtIndex:indexPath.row];
+    /*
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"YYYY-MM-dd"];
     NSArray *weekDayNames = [df weekdaySymbols];
@@ -62,21 +58,20 @@
     NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     NSDateComponents *comps = [calendar components:NSWeekdayCalendarUnit fromDate:myDate];
     int weekday =(int)[comps weekday];
-    
-    cell.dayOfWeek.text = [weekDayNames objectAtIndex:weekday-1];
-    
+    */
+    cell.dayOfWeek.text = currentCity.name;
+    /*
     Temperature currentTemperatureUnits = [SETTINGS retrieveBoolForKey:@"tempUnits"];
     cell.temperature.text  = [NSString stringWithFormat:@"%@ %@",
-                            [SETTINGS chooseTemperature: currentTemperatureUnits
-                                              forObject:currentDay],
-                            [SETTINGS tempToString:currentTemperatureUnits
-                            ]];
-    
-    cell.weatherCondition.text  = currentDay.condition;
+                              [SETTINGS chooseTemperature: currentTemperatureUnits
+                                                forObject:currentDay],
+                              [SETTINGS tempToString:currentTemperatureUnits
+                               ]];
+    */
+    cell.weatherCondition.text  = @"";
     [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
     return cell;
 }
-
 
 /*
 #pragma mark - Navigation

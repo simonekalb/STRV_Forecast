@@ -17,7 +17,9 @@
 		14A12CC31A6FFD9700398A2A /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CBF1A6FFD9700398A2A /* ProximaNova-Light.otf */; };
 		14A12CC41A6FFD9700398A2A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CC01A6FFD9700398A2A /* ProximaNova-Regular.otf */; };
 		14A12CC51A6FFD9700398A2A /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CC11A6FFD9700398A2A /* ProximaNova-Semibold.otf */; };
-		14BC3ED11A6F115300799247 /* SKCustomForecastCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */; };
+		14A12CC91A7001CB00398A2A /* SKTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A12CC71A7001CB00398A2A /* SKTableViewCell.m */; };
+		14A12CCA1A7001CB00398A2A /* SKTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CC81A7001CB00398A2A /* SKTableViewCell.xib */; };
+		14A12CD31A70051C00398A2A /* SKCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A12CD21A70051C00398A2A /* SKCitiesViewController.m */; };
 		14ECEA471A6D19B000653B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA461A6D19B000653B5A /* main.m */; };
 		14ECEA4A1A6D19B000653B5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA491A6D19B000653B5A /* AppDelegate.m */; };
 		14ECEA531A6D19B000653B5A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14ECEA511A6D19B000653B5A /* Main.storyboard */; };
@@ -62,8 +64,11 @@
 		14A12CBF1A6FFD9700398A2A /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
 		14A12CC01A6FFD9700398A2A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		14A12CC11A6FFD9700398A2A /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
-		14BC3ECF1A6F115300799247 /* SKCustomForecastCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCustomForecastCellTableViewCell.h; path = Classes/SKCustomForecastCellTableViewCell.h; sourceTree = "<group>"; };
-		14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKCustomForecastCellTableViewCell.m; path = Classes/SKCustomForecastCellTableViewCell.m; sourceTree = "<group>"; };
+		14A12CC61A7001CB00398A2A /* SKTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKTableViewCell.h; path = Classes/SKTableViewCell.h; sourceTree = "<group>"; };
+		14A12CC71A7001CB00398A2A /* SKTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKTableViewCell.m; path = Classes/SKTableViewCell.m; sourceTree = "<group>"; };
+		14A12CC81A7001CB00398A2A /* SKTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SKTableViewCell.xib; path = Classes/SKTableViewCell.xib; sourceTree = "<group>"; };
+		14A12CD11A70051C00398A2A /* SKCitiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCitiesViewController.h; path = Classes/SKCitiesViewController.h; sourceTree = "<group>"; };
+		14A12CD21A70051C00398A2A /* SKCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKCitiesViewController.m; path = Classes/SKCitiesViewController.m; sourceTree = "<group>"; };
 		14ECEA411A6D19B000653B5A /* STRV_Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRV_Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14ECEA451A6D19B000653B5A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14ECEA461A6D19B000653B5A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,8 +122,9 @@
 		149DEEB21A6FA8B00050A54E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				14BC3ECF1A6F115300799247 /* SKCustomForecastCellTableViewCell.h */,
-				14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */,
+				14A12CC61A7001CB00398A2A /* SKTableViewCell.h */,
+				14A12CC71A7001CB00398A2A /* SKTableViewCell.m */,
+				14A12CC81A7001CB00398A2A /* SKTableViewCell.xib */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -236,6 +242,8 @@
 				149DEEB21A6FA8B00050A54E /* Cells */,
 				14ECEA811A6D854A00653B5A /* SKTodayViewController.h */,
 				14ECEA821A6D854A00653B5A /* SKTodayViewController.m */,
+				14A12CD11A70051C00398A2A /* SKCitiesViewController.h */,
+				14A12CD21A70051C00398A2A /* SKCitiesViewController.m */,
 				14ECEA841A6D857100653B5A /* SKSettingsViewController.h */,
 				14ECEA851A6D857100653B5A /* SKSettingsViewController.m */,
 				14ECEA871A6D858D00653B5A /* SKForecastViewController.h */,
@@ -359,6 +367,7 @@
 				14A12CC21A6FFD9700398A2A /* ProximaNova-Bold.otf in Resources */,
 				14ECEA581A6D19B000653B5A /* LaunchScreen.xib in Resources */,
 				14ECEA711A6D23AC00653B5A /* Podfile in Resources */,
+				14A12CCA1A7001CB00398A2A /* SKTableViewCell.xib in Resources */,
 				14A12CC41A6FFD9700398A2A /* ProximaNova-Regular.otf in Resources */,
 				14A12CC51A6FFD9700398A2A /* ProximaNova-Semibold.otf in Resources */,
 			);
@@ -435,9 +444,10 @@
 				140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */,
 				1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */,
 				14ECEA861A6D857100653B5A /* SKSettingsViewController.m in Sources */,
-				14BC3ED11A6F115300799247 /* SKCustomForecastCellTableViewCell.m in Sources */,
 				14ECEA7F1A6D653400653B5A /* WorldWeatherOnline.m in Sources */,
+				14A12CD31A70051C00398A2A /* SKCitiesViewController.m in Sources */,
 				147C41F21A6EBD0200B32D50 /* SKSettingsForm.m in Sources */,
+				14A12CC91A7001CB00398A2A /* SKTableViewCell.m in Sources */,
 				14ECEA7A1A6D401800653B5A /* SKQueryBuilder.m in Sources */,
 				14ECEA771A6D3C6700653B5A /* SKWWOAPI.m in Sources */,
 			);
