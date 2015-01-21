@@ -10,6 +10,7 @@
 		140AAFAB1A6E7DB20003F905 /* Forecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFA91A6E7DB20003F905 /* Forecast.xcdatamodeld */; };
 		140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFAD1A6E7DD50003F905 /* Forecast.m */; };
 		140AAFB11A6E7DD60003F905 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFB01A6E7DD60003F905 /* City.m */; };
+		142720DF1A6FBC200003535D /* Future.m in Sources */ = {isa = PBXBuildFile; fileRef = 142720DE1A6FBC200003535D /* Future.m */; };
 		1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1443E2431A6E743F0002A9B9 /* SKSettings.m */; };
 		147C41F21A6EBD0200B32D50 /* SKSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 147C41F11A6EBD0200B32D50 /* SKSettingsForm.m */; };
 		14BC3ED11A6F115300799247 /* SKCustomForecastCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */; };
@@ -46,6 +47,8 @@
 		140AAFAD1A6E7DD50003F905 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Forecast.m; path = Classes/Forecast.m; sourceTree = "<group>"; };
 		140AAFAF1A6E7DD60003F905 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = "<group>"; };
 		140AAFB01A6E7DD60003F905 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = "<group>"; };
+		142720DD1A6FBC200003535D /* Future.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Future.h; path = Classes/Future.h; sourceTree = "<group>"; };
+		142720DE1A6FBC200003535D /* Future.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Future.m; path = Classes/Future.m; sourceTree = "<group>"; };
 		1443E2411A6E6CFF0002A9B9 /* STRV-Forecast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STRV-Forecast-Prefix.pch"; sourceTree = "<group>"; };
 		1443E2421A6E743F0002A9B9 /* SKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSettings.h; path = Classes/SKSettings.h; sourceTree = "<group>"; };
 		1443E2431A6E743F0002A9B9 /* SKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettings.m; path = Classes/SKSettings.m; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 		14ECEA6D1A6D1A0900653B5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				142720DD1A6FBC200003535D /* Future.h */,
+				142720DE1A6FBC200003535D /* Future.m */,
 				140AAFAF1A6E7DD60003F905 /* City.h */,
 				140AAFB01A6E7DD60003F905 /* City.m */,
 				140AAFAC1A6E7DD50003F905 /* Forecast.h */,
@@ -398,6 +403,7 @@
 				14ECEA831A6D854A00653B5A /* SKTodayViewController.m in Sources */,
 				14ECEA891A6D858D00653B5A /* SKForecastViewController.m in Sources */,
 				140AAFB11A6E7DD60003F905 /* City.m in Sources */,
+				142720DF1A6FBC200003535D /* Future.m in Sources */,
 				14ECEA4A1A6D19B000653B5A /* AppDelegate.m in Sources */,
 				140AAFAB1A6E7DB20003F905 /* Forecast.xcdatamodeld in Sources */,
 				14ECEA471A6D19B000653B5A /* main.m in Sources */,

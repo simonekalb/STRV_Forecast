@@ -10,6 +10,7 @@
 
 #import "SKWWOAPI.h"
 #import "Forecast.h"
+#import "Future.h"
 #import "City.h"
 
 #define API_KEY @"8078210c20e2d625bb0157b622cce"
@@ -61,10 +62,14 @@
     // Remember to initialize all other cities to NO
     currentForecast.isCurrent = YES;
     
-    /*
-    currentForecast.relationship.latitude =
-    currentForecast.relationship.longitude =
-    */
+    /* Storing directly future forecast for forecast view visualization */
+    for (NSDictionary *futureForecast in data[@"weather"]) {
+        Future *fForecast = [Future MR_createEntity];
+        fForecast.date = futureForecast[@"date"];
+        fForecast.temperature_c = futureForecast[@"hourly"][0][@"tempC"];
+        fForecast.temperature_f = futureForecast[@"hourly"][0][@"tempF"];
+        fForecast.condition = futureForecast[@"hourly"][0][@"weatherDesc"][0][@"value"];
+    }
     
     [SETTINGS saveContext];
     

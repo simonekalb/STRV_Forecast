@@ -23,5 +23,6 @@
 @dynamic wind_speed_km;
 @dynamic wind_speed_mi;
 @dynamic relationship;
+@dynamic future;
 @dynamic isCurrent;
 @end
