@@ -13,6 +13,10 @@
 		142720DF1A6FBC200003535D /* Future.m in Sources */ = {isa = PBXBuildFile; fileRef = 142720DE1A6FBC200003535D /* Future.m */; };
 		1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1443E2431A6E743F0002A9B9 /* SKSettings.m */; };
 		147C41F21A6EBD0200B32D50 /* SKSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 147C41F11A6EBD0200B32D50 /* SKSettingsForm.m */; };
+		14A12CC21A6FFD9700398A2A /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CBE1A6FFD9700398A2A /* ProximaNova-Bold.otf */; };
+		14A12CC31A6FFD9700398A2A /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CBF1A6FFD9700398A2A /* ProximaNova-Light.otf */; };
+		14A12CC41A6FFD9700398A2A /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CC01A6FFD9700398A2A /* ProximaNova-Regular.otf */; };
+		14A12CC51A6FFD9700398A2A /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CC11A6FFD9700398A2A /* ProximaNova-Semibold.otf */; };
 		14BC3ED11A6F115300799247 /* SKCustomForecastCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */; };
 		14ECEA471A6D19B000653B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA461A6D19B000653B5A /* main.m */; };
 		14ECEA4A1A6D19B000653B5A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA491A6D19B000653B5A /* AppDelegate.m */; };
@@ -54,6 +58,10 @@
 		1443E2431A6E743F0002A9B9 /* SKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettings.m; path = Classes/SKSettings.m; sourceTree = "<group>"; };
 		147C41F01A6EBD0200B32D50 /* SKSettingsForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSettingsForm.h; path = Classes/SKSettingsForm.h; sourceTree = "<group>"; };
 		147C41F11A6EBD0200B32D50 /* SKSettingsForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettingsForm.m; path = Classes/SKSettingsForm.m; sourceTree = "<group>"; };
+		14A12CBE1A6FFD9700398A2A /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		14A12CBF1A6FFD9700398A2A /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		14A12CC01A6FFD9700398A2A /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		14A12CC11A6FFD9700398A2A /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
 		14BC3ECF1A6F115300799247 /* SKCustomForecastCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCustomForecastCellTableViewCell.h; path = Classes/SKCustomForecastCellTableViewCell.h; sourceTree = "<group>"; };
 		14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKCustomForecastCellTableViewCell.m; path = Classes/SKCustomForecastCellTableViewCell.m; sourceTree = "<group>"; };
 		14ECEA411A6D19B000653B5A /* STRV_Forecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = STRV_Forecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,6 +121,18 @@
 				14BC3ED01A6F115300799247 /* SKCustomForecastCellTableViewCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		14A12CBD1A6FFD9700398A2A /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				14A12CBE1A6FFD9700398A2A /* ProximaNova-Bold.otf */,
+				14A12CBF1A6FFD9700398A2A /* ProximaNova-Light.otf */,
+				14A12CC01A6FFD9700398A2A /* ProximaNova-Regular.otf */,
+				14A12CC11A6FFD9700398A2A /* ProximaNova-Semibold.otf */,
+			);
+			name = Font;
+			path = ../ProximaNova;
 			sourceTree = "<group>";
 		};
 		14ECEA381A6D19AF00653B5A = {
@@ -227,6 +247,7 @@
 		14ECEA801A6D672F00653B5A /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				14A12CBD1A6FFD9700398A2A /* Font */,
 				14ECEA7D1A6D653400653B5A /* WorldWeatherOnline.h */,
 				14ECEA7E1A6D653400653B5A /* WorldWeatherOnline.m */,
 			);
@@ -333,9 +354,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14A12CC31A6FFD9700398A2A /* ProximaNova-Light.otf in Resources */,
 				14ECEA531A6D19B000653B5A /* Main.storyboard in Resources */,
+				14A12CC21A6FFD9700398A2A /* ProximaNova-Bold.otf in Resources */,
 				14ECEA581A6D19B000653B5A /* LaunchScreen.xib in Resources */,
 				14ECEA711A6D23AC00653B5A /* Podfile in Resources */,
+				14A12CC41A6FFD9700398A2A /* ProximaNova-Regular.otf in Resources */,
+				14A12CC51A6FFD9700398A2A /* ProximaNova-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
