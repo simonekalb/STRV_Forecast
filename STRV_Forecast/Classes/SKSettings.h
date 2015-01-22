@@ -23,10 +23,15 @@ typedef NS_ENUM(NSInteger, Temperature)
     Fahrenheit
 };
 
-
+// World Weather Online API Key
+#define API_KEY @"8078210c20e2d625bb0157b622cce"
 
 // Shortcut for calling this class
 #define SETTINGS [SKSettings sharedInstance]
+
+// Colors
+#define LIGHT_GREY [UIColor colorWithRed:51.0f/255.0f green:51.0f/255.0f blue:51.0f/255.0f alpha:1.0f]
+#define BLUE [UIColor colorWithRed:47.0f/255.0f green:145.0f/255.0f blue:255.0f/255.0f alpha:1.0f]
 
 // iOS Version
 #define IS_IOS7_AND_UP ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
@@ -77,4 +82,14 @@ typedef NS_ENUM(NSInteger, Temperature)
 -(NSString *)chooseLenght:(Lenght)lenght forObject:(Forecast *)forecast;
 -(NSString *)tempToString:(Temperature)temperature;
 -(NSString *)lenghtToString:(Lenght)lenght;
+
+
+/* Fonts and style */
+-(UIFont *)getDefaultFontWithSize:(CGFloat)size;
+-(UIFont *)getLightFontWithSize:(CGFloat)size;
+-(UIFont *)getBoldFontWithSize:(CGFloat)size;
+
+/* Core Data Insertion support funcions */
+-(void)insertNewCity:(NSDictionary *)city;
+
 @end

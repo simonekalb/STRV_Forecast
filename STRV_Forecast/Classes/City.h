@@ -13,10 +13,11 @@
 
 @interface City : NSManagedObject
 
-
+@property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * weatherURL;
 @property (nonatomic, retain) NSString * latitude;
 @property (nonatomic, retain) NSString * longitude;
-@property (nonatomic, retain) NSString * name;
+
 @property (nonatomic, retain) Forecast *detail;
 
 @end

@@ -46,7 +46,7 @@
         _date = @"";
         _includeLocation = @"yes";
         _popular = @"no";
-        _numberOfResults = @"10";
+        _numberOfResults = @"5";
     }
     
     return self;

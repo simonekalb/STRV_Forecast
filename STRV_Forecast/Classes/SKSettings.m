@@ -8,6 +8,7 @@
 
 #import "SKSettings.h"
 #import "Forecast.h"
+#import "City.h"
 #import "Future.h"
 
 @implementation SKSettings
@@ -146,5 +147,31 @@ static SKSettings* _sharedInstance;
         return @"Km/h";
     return @"Mi";
 }
+
+/* Fonts color and style */
+-(UIFont *)getDefaultFontWithSize:(CGFloat)size {
+    return [UIFont fontWithName:@"ProximaNova-Regular" size:size];
+}
+
+-(UIFont *)getLightFontWithSize:(CGFloat)size {
+    return [UIFont fontWithName:@"ProximaNova-Light" size:size];
+}
+
+-(UIFont *)getBoldFontWithSize:(CGFloat)size {
+    return [UIFont fontWithName:@"ProximaNova-Bold" size:size];
+}
+
+/* Core Data Insertion support funcions */
+-(void)insertNewCity:(NSDictionary *)city {
+    
+    City *newCity = [City MR_createEntity];
+    newCity.name = [city[@"areaName"]firstObject][@"value"];
+    newCity.latitude = city[@"latitude"];
+    newCity.longitude = city[@"longitude"];
+    newCity.weatherURL = [city[@"weatherURL"] firstObject][@"value"];
+    [SETTINGS saveContext];
+    
+}
+
 
 @end

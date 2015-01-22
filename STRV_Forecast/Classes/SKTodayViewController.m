@@ -26,10 +26,7 @@
     
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(savedForecastReeceived:) name:CURRENT_FORECAST object:nil];
-    
  
-    
-    
 }
 
 -(void)viewWillAppear:(BOOL)animated {

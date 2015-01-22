@@ -18,23 +18,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     _daysForecast = [NSMutableArray new];
     _daysForecast = [[Future MR_findAll] mutableCopy];
     
     NSString* name = [[SKTableViewCell class] description];
     UINib* nib = [UINib nibWithNibName:name bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:name];
+    
     [self setTitle:NSLocalizedString(@"Forecast", nil)];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
     [_tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

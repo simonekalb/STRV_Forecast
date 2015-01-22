@@ -12,9 +12,10 @@
 
 @implementation City
 
+@dynamic name;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic name;
 @dynamic detail;
+@dynamic weatherURL;
 
 @end

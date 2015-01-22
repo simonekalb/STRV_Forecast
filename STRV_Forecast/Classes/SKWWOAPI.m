@@ -13,8 +13,6 @@
 #import "Future.h"
 #import "City.h"
 
-#define API_KEY @"8078210c20e2d625bb0157b622cce"
-
 @implementation SKWWOAPI
 
 -(id)init {
@@ -29,8 +27,7 @@
     WorldWeatherOnline *wwo = [[WorldWeatherOnline alloc] initWithApiKey:API_KEY];
     wwo.delegate = self;
     
-    // Lookup info for a specific city
-//    [wwo searchLocation:@"London"];
+    
     
     // Request local weather data by a city name
     
@@ -66,6 +63,7 @@
     currentForecast.isCurrent = YES;
     
     [self deleteAllByFuture];
+    
     /* Storing directly future forecast for forecast view visualization */
     for (NSDictionary *futureForecast in data[@"weather"]) {
         Future *fForecast = [Future MR_createEntity];
@@ -75,6 +73,15 @@
         fForecast.condition = futureForecast[@"hourly"][0][@"weatherDesc"][0][@"value"];
     }
     
+    /* Storing information about current city */
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",
+                              data[@"request"][0][@"query"]];
+    NSArray *alreadyAdded = [City MR_findAllWithPredicate:predicate];
+    
+    if([alreadyAdded count] == 0) {
+        City *currentCity = [City MR_createEntity];
+        currentCity.name =  data[@"request"][0][@"query"];
+    }
     [SETTINGS saveContext];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:CURRENT_FORECAST object:nil];
@@ -93,5 +100,7 @@
     }
     [SETTINGS saveContext];
 }
+
+
 
 @end
