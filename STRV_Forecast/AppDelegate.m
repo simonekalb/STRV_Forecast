@@ -30,6 +30,13 @@
     // Setting up the Magical Record Library
     [MagicalRecord setupCoreDataStackWithStoreNamed:@"Forecast"];
     
+    // Customizing Navigation Bar and stuff
+    [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      LIGHT_GREY, NSForegroundColorAttributeName,
+      [SETTINGS getSemiboldFontWithSize:21],
+      NSFontAttributeName, nil]];
     return YES;
 }
 

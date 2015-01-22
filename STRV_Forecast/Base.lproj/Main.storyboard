@@ -341,7 +341,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Ct4-vR-AV4" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" id="0zP-iq-GMt">
-                                <variation key="heightClass=regular-widthClass=compact" constant="1"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="0uv-qF-qvV" firstAttribute="top" secondItem="XaI-al-sJK" secondAttribute="bottom" constant="36" id="4Jr-RU-Ncl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NU3-mZ-hY2" secondAttribute="trailing" constant="30" id="4xm-Xj-24l"/>
