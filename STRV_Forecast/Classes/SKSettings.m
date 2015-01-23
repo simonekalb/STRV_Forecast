@@ -7,6 +7,7 @@
 //
 
 #import "SKSettings.h"
+#import "Climacons.h"
 #import "Forecast.h"
 #import "City.h"
 #import "Future.h"
@@ -177,5 +178,32 @@ static SKSettings* _sharedInstance;
     
 }
 
+
+/* Climacon font support */
+-(Climacon)climaconCharacterForWeatherCode:(int)code
+{
+    if ([@[@395, @392, @374, @371, @368, @350, @338, @335, @332, @329, @326, @323, @230, @179, @227] containsObject:@(code)]) {
+        return ClimaconSnow;
+    } else if ([@[@365, @362, @320, @317, @182] containsObject:@(code)]) {
+        return ClimaconSleet;
+    } else if ([@[@389, @386, @356, @314, @311, @308, @305, @302, @299, @176] containsObject:@(code)]) {
+        return ClimaconRain;
+    } else if ([@[@296, @203, @284, @281, @266, @263, @185] containsObject:@(code)]) {
+        return ClimaconDrizzle;
+    } else if (code == 359) {
+        return ClimaconDownpour;
+    } else if (code == 377 || code == 353) {
+        return ClimaconShowers;
+    } else if (code == 260 || code == 248 || code == 200 || code == 143) {
+        return ClimaconFog;
+    } else if (code == 122 || code == 119) {
+        return ClimaconCloud;
+    } else if (code == 116) {
+        return ClimaconCloudSun;
+    }
+    
+    //113
+    return ClimaconSun;
+}
 
 @end

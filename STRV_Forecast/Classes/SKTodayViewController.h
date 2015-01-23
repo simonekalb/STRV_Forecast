@@ -12,6 +12,7 @@
 @interface SKTodayViewController : UIViewController<CLLocationManagerDelegate, UIActionSheetDelegate>
 
 @property(strong, nonatomic) IBOutlet UIImageView *conditionIcon;
+@property(strong, nonatomic) IBOutlet UILabel *weatherCondition;
 @property(strong, nonatomic) IBOutlet UILabel *temperatureAndCondition;
 @property(strong, nonatomic) IBOutlet UILabel *cityCountry;
 @property(strong, nonatomic) IBOutlet UILabel *chanceOfRain;

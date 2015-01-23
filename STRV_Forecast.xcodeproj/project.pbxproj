@@ -23,6 +23,7 @@
 		14A12CD31A70051C00398A2A /* SKCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A12CD21A70051C00398A2A /* SKCitiesViewController.m */; };
 		14A12CD61A70FAF500398A2A /* SKSearchCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A12CD51A70FAF500398A2A /* SKSearchCitiesViewController.m */; };
 		14BBB2381A7148FB00638A57 /* UICustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BBB2371A7148FB00638A57 /* UICustomSearchBar.m */; };
+		14CB071F1A727F93008BEE70 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14CB071E1A727F93008BEE70 /* Climacons.ttf */; };
 		14EA3DB71A716CA50013C0E4 /* SKSettingsSubfrom.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA3DB61A716CA50013C0E4 /* SKSettingsSubfrom.m */; };
 		14EA3DBA1A7176870013C0E4 /* SKCustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA3DB91A7176870013C0E4 /* SKCustomNavigationController.m */; };
 		14ECEA471A6D19B000653B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA461A6D19B000653B5A /* main.m */; };
@@ -79,6 +80,8 @@
 		14A12CD51A70FAF500398A2A /* SKSearchCitiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSearchCitiesViewController.m; path = Classes/SKSearchCitiesViewController.m; sourceTree = "<group>"; };
 		14BBB2361A7148FB00638A57 /* UICustomSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UICustomSearchBar.h; path = Classes/UICustomSearchBar.h; sourceTree = "<group>"; };
 		14BBB2371A7148FB00638A57 /* UICustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICustomSearchBar.m; path = Classes/UICustomSearchBar.m; sourceTree = "<group>"; };
+		14CB071D1A727E80008BEE70 /* Climacons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Climacons.h; path = ../Climacons.h; sourceTree = "<group>"; };
+		14CB071E1A727F93008BEE70 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
 		14EA3DB51A716CA50013C0E4 /* SKSettingsSubfrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSettingsSubfrom.h; sourceTree = "<group>"; };
 		14EA3DB61A716CA50013C0E4 /* SKSettingsSubfrom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSettingsSubfrom.m; sourceTree = "<group>"; };
 		14EA3DB81A7176870013C0E4 /* SKCustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCustomNavigationController.h; path = Classes/SKCustomNavigationController.h; sourceTree = "<group>"; };
@@ -147,6 +150,7 @@
 		14A12CBD1A6FFD9700398A2A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				14CB071E1A727F93008BEE70 /* Climacons.ttf */,
 				14A12CBE1A6FFD9700398A2A /* ProximaNova-Bold.otf */,
 				14A12CBF1A6FFD9700398A2A /* ProximaNova-Light.otf */,
 				14A12CC01A6FFD9700398A2A /* ProximaNova-Regular.otf */,
@@ -279,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				14A12CBD1A6FFD9700398A2A /* Fonts */,
+				14CB071D1A727E80008BEE70 /* Climacons.h */,
 				14ECEA7D1A6D653400653B5A /* WorldWeatherOnline.h */,
 				14ECEA7E1A6D653400653B5A /* WorldWeatherOnline.m */,
 			);
@@ -386,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CB071F1A727F93008BEE70 /* Climacons.ttf in Resources */,
 				14A12CC31A6FFD9700398A2A /* ProximaNova-Light.otf in Resources */,
 				14ECEA531A6D19B000653B5A /* Main.storyboard in Resources */,
 				14A12CC21A6FFD9700398A2A /* ProximaNova-Bold.otf in Resources */,

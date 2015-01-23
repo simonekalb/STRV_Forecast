@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Climacons.h"
 
 @class Forecast;
 
@@ -32,6 +33,7 @@ typedef NS_ENUM(NSInteger, Temperature)
 // Colors
 #define LIGHT_GREY [UIColor colorWithRed:51.0f/255.0f green:51.0f/255.0f blue:51.0f/255.0f alpha:1.0f]
 #define BLUE [UIColor colorWithRed:47.0f/255.0f green:145.0f/255.0f blue:255.0f/255.0f alpha:1.0f]
+#define YELLOW [UIColor colorWithRed:255.0f/255.0f green:204.0f/255.0f blue:51.0f/255.0f alpha:1.0f]
 
 // iOS Version
 #define IS_IOS7_AND_UP ([[UIDevice currentDevice].systemVersion floatValue] >= 7.0)
@@ -92,5 +94,8 @@ typedef NS_ENUM(NSInteger, Temperature)
 
 /* Core Data Insertion support funcions */
 -(void)insertNewCity:(NSDictionary *)city;
+
+/* Climacon font support */
+-(Climacon)climaconCharacterForWeatherCode:(int)code;
 
 @end

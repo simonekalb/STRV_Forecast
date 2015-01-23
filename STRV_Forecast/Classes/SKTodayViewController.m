@@ -8,6 +8,7 @@
 
 #import "SKTodayViewController.h"
 #import "SKWWOAPI.h"
+#import "Climacons.h"
 #import "Forecast.h"
 #import "City.h"
 
@@ -154,6 +155,9 @@
 
 /* Reset the current weather condition table */
 -(void)resetCondition {
+    _weatherCondition.font = [UIFont fontWithName:CLIMACONS_FONT size:115];
+    _weatherCondition.text =  [NSString stringWithFormat:@"%c", ClimaconSun];
+    
     _cityCountry.text = @"No city selected";
     _temperatureAndCondition.text = [NSString stringWithFormat:@"-- %@  | --",
                                      [SETTINGS tempToString:_degreeUnits]];
@@ -167,7 +171,7 @@
 -(void)showConditions:(Forecast *)forecast {
     
     _cityCountry.text = forecast.city;
-    [_cityCountry sizeToFit];
+    
     /* Choosing the right units for temperature according to settings */
     _temperatureAndCondition.text = [NSString stringWithFormat:@"%@ %@  |  %@",
                                      [SETTINGS chooseTemperature:_degreeUnits forObject:forecast],
@@ -192,6 +196,10 @@
     [super didReceiveMemoryWarning];
    
 }
+
+
+
+/* Sharing actions */
 
 -(IBAction)sharePressed:(id)sender {
     [self shareText:[NSString stringWithFormat:@"Today Forecast for %@", _cityCountry] andUrl:[NSURL URLWithString:@"http://www.worldweatheronline.com"]];
