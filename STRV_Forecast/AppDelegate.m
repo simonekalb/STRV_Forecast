@@ -37,6 +37,7 @@
       LIGHT_GREY, NSForegroundColorAttributeName,
       [SETTINGS getSemiboldFontWithSize:21],
       NSFontAttributeName, nil]];
+    
     return YES;
 }
 

@@ -13,9 +13,15 @@
 - (NSArray *)fields
 {
     return @[
-             @{@"textLabel.color": LIGHT_GREY,
-             @"textLabel.font": [SETTINGS getDefaultFontWithSize:16.0f]
+             @{FXFormFieldKey: @"meters",
+               FXFormFieldTitle: NSLocalizedString(@"Meters", nil),
+               @"textLabel.color": LIGHT_GREY,
+               @"textLabel.font": [SETTINGS getDefaultFontWithSize:16.0f]
+               },
+             @{FXFormFieldKey: @"inches",
+               FXFormFieldTitle: NSLocalizedString(@"Inches", nil),
+               @"textLabel.color": LIGHT_GREY,
+               @"textLabel.font": [SETTINGS getDefaultFontWithSize:16.0f]
             }];
-             
 }
 @end

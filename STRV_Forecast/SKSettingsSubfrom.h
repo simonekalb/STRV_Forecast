@@ -10,5 +10,6 @@
 #import <FXForms.h>
 
 @interface SKSettingsSubfrom : NSObject<FXForm>
-
+@property(strong, nonatomic) NSString *meters;
+@property(strong, nonatomic) NSString *inches;
 @end

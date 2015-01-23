@@ -20,7 +20,6 @@
     
     //Setting up form
     self.formController.form = [[SKSettingsForm alloc] init];
-    
 }
 
 -(void)updateLenght {
