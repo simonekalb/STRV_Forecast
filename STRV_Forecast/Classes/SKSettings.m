@@ -161,6 +161,10 @@ static SKSettings* _sharedInstance;
     return [UIFont fontWithName:@"ProximaNova-Bold" size:size];
 }
 
+-(UIFont *)getSemiboldFontWithSize:(CGFloat)size {
+    return [UIFont fontWithName:@"ProximaNova-Semibold" size:size];
+}
+
 /* Core Data Insertion support funcions */
 -(void)insertNewCity:(NSDictionary *)city {
     

@@ -88,6 +88,7 @@ typedef NS_ENUM(NSInteger, Temperature)
 -(UIFont *)getDefaultFontWithSize:(CGFloat)size;
 -(UIFont *)getLightFontWithSize:(CGFloat)size;
 -(UIFont *)getBoldFontWithSize:(CGFloat)size;
+-(UIFont *)getSemiboldFontWithSize:(CGFloat)size;
 
 /* Core Data Insertion support funcions */
 -(void)insertNewCity:(NSDictionary *)city;

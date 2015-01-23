@@ -78,6 +78,21 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+
+        City *cityToRemove = _cities[indexPath.row];
+
+        // Deleting an Entity with MagicalRecord
+        [cityToRemove MR_deleteEntity];
+        [SETTINGS saveContext];
+        [_cities removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+
 /*
 #pragma mark - Navigation
 

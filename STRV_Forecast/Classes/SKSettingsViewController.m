@@ -23,7 +23,6 @@
 }
 
 -(void)updateLenght {
-    
     SKSettingsForm *form = (SKSettingsForm *)self.formController.form;
     [SETTINGS storeBool:form.lenghtUnits forKey:@"lenghtUnits"];
     
@@ -39,19 +38,38 @@
     
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    NSString *title = [(id<UITableViewDataSource>)self.formController tableView:tableView titleForHeaderInSection:section];
+    if ([title length])
+    {
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 30, tableView.frame.size.width - 20, 18)];
+        label.text = title;
+        label.font = [SETTINGS getBoldFontWithSize:14];
+        label.textColor = BLUE;
+        [label sizeToFit];
+        
+        UIImageView *underBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Line_underNavBar"]];
+        underBar.frame = CGRectMake(0, 0, 400, 2);
+        
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, label.frame.size.height + 40)];
+        view.backgroundColor = [UIColor whiteColor];
+        [view addSubview:label];
+        [view addSubview:underBar];
+        return view;
+    }
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return [self tableView:tableView viewForHeaderInSection:section].frame.size.height;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+ 
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
