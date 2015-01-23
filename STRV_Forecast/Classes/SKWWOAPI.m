@@ -27,10 +27,7 @@
     WorldWeatherOnline *wwo = [[WorldWeatherOnline alloc] initWithApiKey:API_KEY];
     wwo.delegate = self;
     
-    
-    
     // Request local weather data by a city name
-    
     [wwo getWeather:cityName];
     
 }
@@ -43,7 +40,7 @@
 - (void)requestSucces:(NSDictionary *)data {
     
     /* Remove all Object from this city */
-    [self deleteAllByCity:@"London"];
+    [self deleteAllByCity:data[@"request"][0][@"query"]];
     
     /* Create items in the database for current location weather */
     Forecast *currentForecast = [Forecast MR_createEntity];

@@ -11,6 +11,7 @@
 		140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFAD1A6E7DD50003F905 /* Forecast.m */; };
 		140AAFB11A6E7DD60003F905 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFB01A6E7DD60003F905 /* City.m */; };
 		142720DF1A6FBC200003535D /* Future.m in Sources */ = {isa = PBXBuildFile; fileRef = 142720DE1A6FBC200003535D /* Future.m */; };
+		142872B51A72548E00B4BA52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142872B41A72548E00B4BA52 /* CoreLocation.framework */; };
 		1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1443E2431A6E743F0002A9B9 /* SKSettings.m */; };
 		147C41F21A6EBD0200B32D50 /* SKSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 147C41F11A6EBD0200B32D50 /* SKSettingsForm.m */; };
 		14A12CC21A6FFD9700398A2A /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 14A12CBE1A6FFD9700398A2A /* ProximaNova-Bold.otf */; };
@@ -59,6 +60,7 @@
 		140AAFB01A6E7DD60003F905 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = "<group>"; };
 		142720DD1A6FBC200003535D /* Future.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Future.h; path = Classes/Future.h; sourceTree = "<group>"; };
 		142720DE1A6FBC200003535D /* Future.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Future.m; path = Classes/Future.m; sourceTree = "<group>"; };
+		142872B41A72548E00B4BA52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1443E2411A6E6CFF0002A9B9 /* STRV-Forecast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STRV-Forecast-Prefix.pch"; sourceTree = "<group>"; };
 		1443E2421A6E743F0002A9B9 /* SKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSettings.h; path = Classes/SKSettings.h; sourceTree = "<group>"; };
 		1443E2431A6E743F0002A9B9 /* SKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SKSettings.m; path = Classes/SKSettings.m; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				142872B51A72548E00B4BA52 /* CoreLocation.framework in Frameworks */,
 				14ECEA741A6D279000653B5A /* Crashlytics.framework in Frameworks */,
 				E2F2D29C7DDF4A3B42E7FDEC /* libPods-STRV_Forecast.a in Frameworks */,
 			);
@@ -285,6 +288,7 @@
 		A6BC0EDCFF62F621463EA174 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				142872B41A72548E00B4BA52 /* CoreLocation.framework */,
 				EB9FA3E78F4F2A74DC9FC8EC /* libPods-STRV_Forecast.a */,
 			);
 			name = Frameworks;

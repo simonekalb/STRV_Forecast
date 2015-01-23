@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface SKTodayViewController : UIViewController<UIActionSheetDelegate>
+@interface SKTodayViewController : UIViewController<CLLocationManagerDelegate, UIActionSheetDelegate>
 
 @property(strong, nonatomic) IBOutlet UIImageView *conditionIcon;
 @property(strong, nonatomic) IBOutlet UILabel *temperatureAndCondition;
@@ -19,6 +20,7 @@
 @property(strong, nonatomic) IBOutlet UILabel *windSpeed;
 @property(strong, nonatomic) IBOutlet UILabel *wind16;
 @property(strong, nonatomic) IBOutlet UIButton *shareButton;
+@property(strong, nonatomic) CLLocationManager *locationManager;
 
 -(IBAction)sharePressed:(id)sender;
 
