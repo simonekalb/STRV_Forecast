@@ -262,9 +262,9 @@
 		14ECEA6F1A6D1A2000653B5A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				149DEEB21A6FA8B00050A54E /* Cells */,
 				14EA3DB81A7176870013C0E4 /* SKCustomNavigationController.h */,
 				14EA3DB91A7176870013C0E4 /* SKCustomNavigationController.m */,
-				149DEEB21A6FA8B00050A54E /* Cells */,
 				14A12CD41A70FAF500398A2A /* SKSearchCitiesViewController.h */,
 				14A12CD51A70FAF500398A2A /* SKSearchCitiesViewController.m */,
 				14ECEA811A6D854A00653B5A /* SKTodayViewController.h */,

@@ -31,7 +31,11 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     [_tableView reloadData];
 }
 
@@ -69,26 +73,34 @@
     cell.dayOfWeek.text = [weekDayNames objectAtIndex:weekday-1];
     
     Temperature currentTemperatureUnits = [SETTINGS retrieveBoolForKey:@"tempUnits"];
-    cell.temperature.text  = [NSString stringWithFormat:@"%@ %@",
+    cell.temperature.text  = [NSString stringWithFormat:@"%@%@",
                             [SETTINGS chooseTemperature: currentTemperatureUnits
                                               forObject:currentDay],
                             [SETTINGS tempToString:currentTemperatureUnits
                             ]];
     
     cell.weatherCondition.text  = currentDay.condition;
-    [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
+    [cell.icon setImage:[UIImage imageNamed:@"CL"]];
     return cell;
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 50, 0, 0)];
+    }
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsMake(0, 50, 0, 0)];
+    }
 }
-*/
+
 
 @end
