@@ -55,6 +55,7 @@
     currentForecast.wind_speed_km = data[@"current_condition"][0][@"windspeedKmph"];
     currentForecast.wind_speed_mi = data[@"current_condition"][0][@"windspeedMiles"];
     currentForecast.wind_direction = data[@"current_condition"][0][@"winddir16Point"];
+    currentForecast.weatherCode = [data[@"current_condition"][0][@"weatherCode"] longLongValue];
     
     // Remember to initialize all other cities to NO
     currentForecast.isCurrent = YES;

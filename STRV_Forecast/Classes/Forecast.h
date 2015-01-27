@@ -28,5 +28,6 @@
 @property (nonatomic, retain) City *relationship;
 
 @property (nonatomic) BOOL isCurrent;
+@property (nonatomic) int64_t weatherCode;
 
 @end

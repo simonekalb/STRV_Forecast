@@ -170,6 +170,9 @@
 
 -(void)showConditions:(Forecast *)forecast {
     
+    _weatherCondition.font = [UIFont fontWithName:CLIMACONS_FONT size:115];
+    _weatherCondition.text =  [NSString stringWithFormat:@"%c", [SETTINGS climaconCharacterForWeatherCode:(int)forecast.weatherCode]];
+    
     _cityCountry.text = forecast.city;
     
     /* Choosing the right units for temperature according to settings */

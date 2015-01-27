@@ -25,4 +25,5 @@
 @dynamic relationship;
 @dynamic future;
 @dynamic isCurrent;
+@dynamic weatherCode;
 @end

@@ -20,6 +20,8 @@
     
     //Setting up form
     self.formController.form = [[SKSettingsForm alloc] init];
+    self.view.backgroundColor = [UIColor whiteColor];
+    [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
 }
 
 -(void)updateLenght {
@@ -50,7 +52,8 @@
         [label sizeToFit];
         
         UIImageView *underBar = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Line_underNavBar"]];
-        underBar.frame = CGRectMake(0, 0, 400, 2);
+        underBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 2);
+        underBar.contentMode = UIViewContentModeScaleToFill;
         
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, label.frame.size.height + 40)];
         view.backgroundColor = [UIColor whiteColor];
