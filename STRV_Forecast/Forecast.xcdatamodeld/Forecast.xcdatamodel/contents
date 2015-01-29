@@ -28,11 +28,12 @@
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="temperature_c" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="temperature_f" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="weatherCode" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Forecast" inverseName="future" inverseEntity="Forecast" syncable="YES"/>
     </entity>
     <elements>
         <element name="City" positionX="-54" positionY="63" width="128" height="120"/>
         <element name="Forecast" positionX="-63" positionY="-18" width="128" height="255"/>
-        <element name="Future" positionX="-54" positionY="81" width="128" height="118"/>
+        <element name="Future" positionX="-54" positionY="81" width="128" height="135"/>
     </elements>
 </model>

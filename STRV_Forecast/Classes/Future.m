@@ -17,5 +17,5 @@
 @dynamic temperature_c;
 @dynamic condition;
 @dynamic futureForecast;
-
+@dynamic weatherCode;
 @end

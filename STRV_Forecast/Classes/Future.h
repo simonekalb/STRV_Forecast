@@ -18,5 +18,6 @@
 @property (nonatomic, retain) NSString * temperature_c;
 @property (nonatomic, retain) NSString * condition;
 @property (nonatomic, retain) Forecast *futureForecast;
+@property (nonatomic) int64_t weatherCode;
 
 @end

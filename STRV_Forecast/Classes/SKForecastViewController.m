@@ -16,7 +16,7 @@
 
 @implementation SKForecastViewController
 
-- (void)viewDidLoad {
+-(void)viewDidLoad {
     [super viewDidLoad];
     
     _daysForecast = [NSMutableArray new];
@@ -25,7 +25,6 @@
     NSString* name = [[SKTableViewCell class] description];
     UINib* nib = [UINib nibWithNibName:name bundle:[NSBundle mainBundle]];
     [_tableView registerNib:nib forCellReuseIdentifier:name];
-    
     [self setTitle:NSLocalizedString(@"Forecast", nil)];
 }
 
@@ -44,7 +43,7 @@
     
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_daysForecast count];
 }
@@ -80,15 +79,19 @@
                             ]];
     
     cell.weatherCondition.text  = currentDay.condition;
-    [cell.icon setImage:[UIImage imageNamed:@"CL"]];
+
+    [cell.climaCon setText:[NSString stringWithFormat:@"%c",
+                            [SETTINGS climaconCharacterForWeatherCode:(int)currentDay.weatherCode]]];
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     // Remove seperator inset
     if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
-        [cell setSeparatorInset:UIEdgeInsetsMake(0, 50, 0, 0)];
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 75, 0, 0)];
     }
     
     // Prevent the cell from inheriting the Table View's margin settings
@@ -98,8 +101,17 @@
     
     // Explictly set your cell's layout margins
     if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
-        [cell setLayoutMargins:UIEdgeInsetsMake(0, 50, 0, 0)];
+        [cell setLayoutMargins:UIEdgeInsetsMake(0, 75, 0, 0)];
     }
+    
+    if ([tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [tableView setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+    
 }
 
 

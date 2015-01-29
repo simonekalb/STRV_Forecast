@@ -90,7 +90,7 @@ static SKSettings* _sharedInstance;
 }
 
 -(BOOL)isiPhone4 {
-    return !IS_IPHONE5;
+    return [[UIScreen mainScreen] bounds].size.height == 480;
 }
 
 -(BOOL)isiPhone5 {

@@ -10,6 +10,7 @@
 
 @interface SKTableViewCell : UITableViewCell
 @property(strong, nonatomic) IBOutlet UIImageView *icon;
+@property(strong, nonatomic) IBOutlet UILabel *climaCon;
 @property(strong, nonatomic) IBOutlet UILabel *dayOfWeek;
 @property(strong, nonatomic) IBOutlet UILabel *weatherCondition;
 @property(strong, nonatomic) IBOutlet UILabel *temperature;

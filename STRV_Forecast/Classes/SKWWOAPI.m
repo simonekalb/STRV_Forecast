@@ -69,6 +69,7 @@
         fForecast.temperature_c = futureForecast[@"hourly"][0][@"tempC"];
         fForecast.temperature_f = futureForecast[@"hourly"][0][@"tempF"];
         fForecast.condition = futureForecast[@"hourly"][0][@"weatherDesc"][0][@"value"];
+        fForecast.weatherCode = [futureForecast[@"hourly"][0][@"weatherCode"] longLongValue];
     }
     
     /* Storing information about current city */

@@ -38,6 +38,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 87.0f;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_cities count];
@@ -54,25 +59,8 @@
         cell = [[SKTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:name];
     }
     City *currentCity = [_cities objectAtIndex:indexPath.row];
-    /*
-    NSDateFormatter *df = [[NSDateFormatter alloc] init];
-    [df setDateFormat:@"YYYY-MM-dd"];
-    NSArray *weekDayNames = [df weekdaySymbols];
-    NSDate *myDate = [df dateFromString:currentDay.date];
     
-    NSCalendar *calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *comps = [calendar components:NSWeekdayCalendarUnit fromDate:myDate];
-    int weekday =(int)[comps weekday];
-    */
     cell.dayOfWeek.text = currentCity.name;
-    /*
-    Temperature currentTemperatureUnits = [SETTINGS retrieveBoolForKey:@"tempUnits"];
-    cell.temperature.text  = [NSString stringWithFormat:@"%@ %@",
-                              [SETTINGS chooseTemperature: currentTemperatureUnits
-                                                forObject:currentDay],
-                              [SETTINGS tempToString:currentTemperatureUnits
-                               ]];
-    */
     cell.weatherCondition.text  = @"";
     [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
     return cell;
@@ -89,6 +77,24 @@
         [SETTINGS saveContext];
         [_cities removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+    }
+}
+
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Remove seperator inset
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsMake(0, 75, 0, 0)];
+    }
+    
+    // Prevent the cell from inheriting the Table View's margin settings
+    if ([cell respondsToSelector:@selector(setPreservesSuperviewLayoutMargins:)]) {
+        [cell setPreservesSuperviewLayoutMargins:NO];
+    }
+    
+    // Explictly set your cell's layout margins
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsMake(0, 75, 0, 0)];
     }
 }
 
