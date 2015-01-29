@@ -60,9 +60,11 @@
     }
     City *currentCity = [_cities objectAtIndex:indexPath.row];
     
-    cell.dayOfWeek.text = currentCity.name;
-    cell.weatherCondition.text  = @"";
+    cell.dayOfWeek.text = [currentCity.name componentsSeparatedByString:@","][0];
+    cell.weatherCondition.text  = @"Sunny";
     [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
+    cell.temperature.text  = @"12°";
+    
     return cell;
 }
 
@@ -97,6 +99,20 @@
         [cell setLayoutMargins:UIEdgeInsetsMake(0, 75, 0, 0)];
     }
 }
+
+// Just for iOS 8
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        [_cities removeObjectAtIndex:indexPath.row];
+        [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }];
+    deleteAction.backgroundColor = ORANGE;
+    
+    return @[deleteAction];
+}
+
+
 
 
 -(IBAction)doneButtonPressed:(id)sender {
