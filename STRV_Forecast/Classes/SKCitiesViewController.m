@@ -18,8 +18,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _cities = [NSMutableArray new];
-    _cities = [[City MR_findAll] mutableCopy];
     
     NSString* name = [[SKTableViewCell class] description];
     UINib* nib = [UINib nibWithNibName:name bundle:[NSBundle mainBundle]];
@@ -30,6 +28,8 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _cities = [NSMutableArray new];
+    _cities = [[City MR_findAll] mutableCopy];
     [_tableView reloadData];
 }
 
@@ -76,9 +76,9 @@
 
         // Deleting an Entity with MagicalRecord
         [cityToRemove MR_deleteEntity];
-        [SETTINGS saveContext];
         [_cities removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [SETTINGS saveContext];
     }
 }
 
@@ -104,7 +104,12 @@
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        City *cityToRemove = _cities[indexPath.row];
+        
+        // Deleting an Entity with MagicalRecord
+        [cityToRemove MR_deleteEntity];
         [_cities removeObjectAtIndex:indexPath.row];
+        [SETTINGS saveContext];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
     deleteAction.backgroundColor = ORANGE;

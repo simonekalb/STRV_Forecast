@@ -23,7 +23,9 @@
     [[UITextField appearanceWhenContainedIn:[UICustomSearchBar class], nil] setTextColor:BLUE];
     [[UITextField appearanceWhenContainedIn:[UICustomSearchBar class], nil] setFont:[SETTINGS getLightFontWithSize:14.0]];
     
-    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Search for a city" attributes:@{ NSForegroundColorAttributeName : BLUE }];
+    NSAttributedString *str = [[NSAttributedString alloc] initWithString:@"Search for a city"
+                                attributes:@{ NSForegroundColorAttributeName : BLUE }];
+    
     [[UITextField appearanceWhenContainedIn:[UICustomSearchBar class], nil] setAttributedPlaceholder:str];
 }
 
@@ -33,6 +35,9 @@
 }
 
 #pragma mark - Search bar Delegate Methods
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
+
+}
 
 -(void)searchDisplayController:(UISearchDisplayController *)controller didLoadSearchResultsTableView:(UITableView *)tableView {
     // Should insert a loading mechanism with HUD
@@ -90,16 +95,6 @@
     
     NSDictionary *currentCity = [_result objectAtIndex:indexPath.row];
     [SETTINGS insertNewCity:currentCity];
-    
-    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
-    
-    if(selectedCell.accessoryType == UITableViewCellAccessoryCheckmark)
-        selectedCell.accessoryType = UITableViewCellAccessoryNone;
-    else
-        selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-
 }
 
 
@@ -125,5 +120,14 @@
     [self dismissViewControllerAnimated:NO completion:nil];
 }
 
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
 
 @end

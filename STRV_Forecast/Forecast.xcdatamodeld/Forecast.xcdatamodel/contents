@@ -32,8 +32,8 @@
         <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Forecast" inverseName="future" inverseEntity="Forecast" syncable="YES"/>
     </entity>
     <elements>
-        <element name="City" positionX="-54" positionY="63" width="128" height="118"/>
-        <element name="Forecast" positionX="-63" positionY="-18" width="128" height="253"/>
-        <element name="Future" positionX="-54" positionY="54" width="128" height="135"/>
+        <element name="City" positionX="-54" positionY="63" width="128" height="120"/>
+        <element name="Forecast" positionX="-63" positionY="-18" width="128" height="255"/>
+        <element name="Future" positionX="-54" positionY="81" width="128" height="135"/>
     </elements>
 </model>

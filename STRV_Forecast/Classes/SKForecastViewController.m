@@ -8,8 +8,7 @@
 
 #import "SKForecastViewController.h"
 #import "SKTableViewCell.h"
-#import "Forecast.h"
-
+#import "Future.h"
 
 @interface SKForecastViewController ()
 @property(strong, nonatomic) NSMutableArray *daysForecast;
@@ -21,7 +20,7 @@
     [super viewDidLoad];
     
     _daysForecast = [NSMutableArray new];
-//    _daysForecast = [[Future MR_findAll] mutableCopy];
+    _daysForecast = [[Future MR_findAll] mutableCopy];
     
     NSString* name = [[SKTableViewCell class] description];
     UINib* nib = [UINib nibWithNibName:name bundle:[NSBundle mainBundle]];
@@ -59,7 +58,7 @@
     if (cell == nil) {
         cell = [[SKTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:name];
     }
-    Forecast *currentDay = [_daysForecast objectAtIndex:indexPath.row+1];
+    Future *currentDay = [_daysForecast objectAtIndex:indexPath.row];
     
     NSDateFormatter *df = [[NSDateFormatter alloc] init];
     [df setDateFormat:@"YYYY-MM-dd"];
