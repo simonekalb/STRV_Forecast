@@ -10,7 +10,6 @@
 
 #import "SKWWOAPI.h"
 #import "Forecast.h"
-#import "Future.h"
 #import "City.h"
 
 @implementation SKWWOAPI
@@ -34,72 +33,90 @@
 
 - (void)requestFailed:(NSString *)message {
     
+    // TODO - Fix With HUD
     NSLog(@"Error: %@", message);
 }
 
 - (void)requestSucces:(NSDictionary *)data {
     
-    /* Remove all Object from this city */
-    [self deleteAllByCity:data[@"request"][0][@"query"]];
-    
-    /* Create items in the database for current location weather */
-    Forecast *currentForecast = [Forecast MR_createEntity];
-    
-    currentForecast.city = data[@"request"][0][@"query"];
-    currentForecast.temperature_c = data[@"current_condition"][0][@"temp_C"];
-    currentForecast.temperature_f = data[@"current_condition"][0][@"temp_F"];
-    currentForecast.condition = data[@"current_condition"][0][@"weatherDesc"][0][@"value"];
-    currentForecast.chance_rain = data[@"weather"][0][@"hourly"][0][@"chanceofrain"];
-    currentForecast.precipitation = data[@"current_condition"][0][@"precipMM"];
-    currentForecast.pressure = data[@"weather"][0][@"hourly"][0][@"pressure"];
-    currentForecast.wind_speed_km = data[@"current_condition"][0][@"windspeedKmph"];
-    currentForecast.wind_speed_mi = data[@"current_condition"][0][@"windspeedMiles"];
-    currentForecast.wind_direction = data[@"current_condition"][0][@"winddir16Point"];
-    currentForecast.weatherCode = [data[@"current_condition"][0][@"weatherCode"] longLongValue];
-    
-    // Remember to initialize all other cities to NO
-    currentForecast.isCurrent = YES;
-    
-    [self deleteAllByFuture];
-    
-    /* Storing directly future forecast for forecast view visualization */
-    for (NSDictionary *futureForecast in data[@"weather"]) {
-        Future *fForecast = [Future MR_createEntity];
-        fForecast.date = futureForecast[@"date"];
-        fForecast.temperature_c = futureForecast[@"hourly"][0][@"tempC"];
-        fForecast.temperature_f = futureForecast[@"hourly"][0][@"tempF"];
-        fForecast.condition = futureForecast[@"hourly"][0][@"weatherDesc"][0][@"value"];
-        fForecast.weatherCode = [futureForecast[@"hourly"][0][@"weatherCode"] longLongValue];
-    }
-    
-    /* Storing information about current city */
+    // Make sure that the city doesn't exist yet
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@",
                               data[@"request"][0][@"query"]];
     NSArray *alreadyAdded = [City MR_findAllWithPredicate:predicate];
     
-    if([alreadyAdded count] == 0) {
-        City *currentCity = [City MR_createEntity];
-        currentCity.name =  data[@"request"][0][@"query"];
+    if([alreadyAdded count] > 0) {
+//        [self removePreviousWeatherForCity:alreadyAdded[0]];
+        [self updateWeatherForCity:(City *)alreadyAdded[0] withDate:(NSDictionary *)data];
+    } else {
+        // Create a new City
+        City *newCity = [City MR_createEntity];
+        newCity.name = data[@"request"][0][@"query"];
+        [self updateWeatherForCity:(City *)newCity withDate:(NSDictionary *)data];
     }
-    [SETTINGS saveContext];
     
+    
+    [SETTINGS saveContext];
     [[NSNotificationCenter defaultCenter] postNotificationName:CURRENT_FORECAST object:nil];
 }
 
--(void)deleteAllByCity:(NSString *)city {
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"city == %@", city];
-    [Forecast MR_deleteAllMatchingPredicate:predicate];
-    [SETTINGS saveContext];
+
+-(void)updateWeatherForCity:(City *)newCity withDate:(NSDictionary *)data {
+
+    // Forecast for today
+    Forecast *currentForecast = [Forecast MR_createEntity];
+    NSDictionary *dataEndPoint = data[@"current_condition"][0];
+    currentForecast.city = data[@"request"][0][@"query"];
+    currentForecast.temperature_c = dataEndPoint[@"temp_C"];
+    currentForecast.temperature_f = dataEndPoint[@"temp_F"];
+    currentForecast.condition = dataEndPoint[@"weatherDesc"][0][@"value"];
+    currentForecast.chance_rain = data[@"weather"][0][@"hourly"][0][@"chanceofrain"];
+    currentForecast.precipitation = dataEndPoint[@"precipMM"];
+    currentForecast.pressure = data[@"weather"][0][@"hourly"][0][@"pressure"];
+    currentForecast.wind_speed_km = dataEndPoint[@"windspeedKmph"];
+    currentForecast.wind_speed_mi = dataEndPoint[@"windspeedMiles"];
+    currentForecast.wind_direction = dataEndPoint[@"winddir16Point"];
+    currentForecast.weatherCode = [dataEndPoint[@"weatherCode"] longLongValue];
+    
+    NSDateFormatter *dateFormatter =[[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    
+    // Setting today's date
+    //    currentForecast.date = [dateFormatter stringFromDate:[NSDate date]];
+    
+    // This is not going to work as in
+    // http://stackoverflow.com/questions/7385439/exception-thrown-in-nsorderedset-generated-accessors/26676124#26676124
+    
+    [newCity addForecastObject:currentForecast];
+
+    int i = 1;
+    
+    // Storing directly future forecast for forecast view visualization
+    for (NSDictionary *futureForecast in data[@"weather"]) {
+        
+        Forecast *currentForecast = [Forecast MR_createEntity];
+        currentForecast.date = futureForecast[@"date"];
+        NSDictionary *endpoint = futureForecast[@"hourly"][0];
+        currentForecast.temperature_c = endpoint[@"tempC"];
+        currentForecast.temperature_f = endpoint[@"tempF"];
+        currentForecast.chance_rain = endpoint[@"chanceofrain"];
+        currentForecast.pressure = endpoint[@"pressure"];
+        currentForecast.precipitation = endpoint[@"precipitation"];
+        currentForecast.wind_speed_km = endpoint[@"windspeedKmph"];
+        currentForecast.wind_speed_mi = endpoint[@"windspeedMiles"];
+        currentForecast.wind_direction =endpoint[@"winddir16Point"];
+        currentForecast.condition = endpoint[@"weatherDesc"][0][@"value"];
+        currentForecast.weatherCode = [endpoint[@"weatherCode"] longLongValue];
+        [newCity addForecastObject:currentForecast];
+        i++;
+    }
+    
 }
 
--(void)deleteAllByFuture {
-    NSArray *allObj = [Future MR_findAll];
-    for (Future *object in allObj) {
-        [object MR_deleteEntity];
+-(void)removePreviousWeatherForCity:(City *)city {
+    for (Forecast *forecast in city.forecast) {
+        [city removeForecastObject:forecast];
     }
     [SETTINGS saveContext];
 }
-
-
 
 @end

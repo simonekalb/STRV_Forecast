@@ -7,10 +7,11 @@
 //
 
 #import "SKSettings.h"
+#import "SKWWOAPI.h"
 #import "Climacons.h"
 #import "Forecast.h"
 #import "City.h"
-#import "Future.h"
+
 
 @implementation SKSettings
 
@@ -113,21 +114,11 @@ static SKSettings* _sharedInstance;
 #pragma mark - Units convertion support functions
 
 -(NSString *)chooseTemperature:(Temperature)temperature forObject:(id)forecast {
-    
-    if([forecast isMemberOfClass:[Forecast class]]) {
-        Forecast *fore = (Forecast *)forecast;
-        if(temperature == Celsius) {
-            return fore.temperature_c;
-        }
-        return fore.temperature_f;
-    }
-    
-    Future *future =(Future *)forecast;
+    Forecast *fore = (Forecast *)forecast;
     if(temperature == Celsius) {
-        return future.temperature_c;
+        return fore.temperature_c;
     }
-    return future.temperature_f;
-                     
+    return fore.temperature_f;
 }
 
 -(NSString *)chooseLenght:(Lenght)lenght forObject:(Forecast *)forecast {
@@ -174,6 +165,11 @@ static SKSettings* _sharedInstance;
     newCity.latitude = city[@"latitude"];
     newCity.longitude = city[@"longitude"];
     newCity.weatherURL = [city[@"weatherURL"] firstObject][@"value"];
+
+    // Insert linked forecast for this city
+    SKWWOAPI *api = [[SKWWOAPI alloc] init];
+    [api forwardRequest:newCity.name];
+    
     [SETTINGS saveContext];
     
 }

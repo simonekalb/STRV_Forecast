@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		140AAFAB1A6E7DB20003F905 /* Forecast.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFA91A6E7DB20003F905 /* Forecast.xcdatamodeld */; };
-		140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFAD1A6E7DD50003F905 /* Forecast.m */; };
-		140AAFB11A6E7DD60003F905 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 140AAFB01A6E7DD60003F905 /* City.m */; };
-		142720DF1A6FBC200003535D /* Future.m in Sources */ = {isa = PBXBuildFile; fileRef = 142720DE1A6FBC200003535D /* Future.m */; };
 		142872B51A72548E00B4BA52 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 142872B41A72548E00B4BA52 /* CoreLocation.framework */; };
 		1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1443E2431A6E743F0002A9B9 /* SKSettings.m */; };
 		147C41F21A6EBD0200B32D50 /* SKSettingsForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 147C41F11A6EBD0200B32D50 /* SKSettingsForm.m */; };
@@ -24,6 +21,8 @@
 		14A12CD61A70FAF500398A2A /* SKSearchCitiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14A12CD51A70FAF500398A2A /* SKSearchCitiesViewController.m */; };
 		14BBB2381A7148FB00638A57 /* UICustomSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 14BBB2371A7148FB00638A57 /* UICustomSearchBar.m */; };
 		14CB071F1A727F93008BEE70 /* Climacons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14CB071E1A727F93008BEE70 /* Climacons.ttf */; };
+		14CBA80E1A7BC6AC002CE313 /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CBA80D1A7BC6AC002CE313 /* City.m */; };
+		14CBA8111A7BC6AD002CE313 /* Forecast.m in Sources */ = {isa = PBXBuildFile; fileRef = 14CBA8101A7BC6AD002CE313 /* Forecast.m */; };
 		14EA3DB71A716CA50013C0E4 /* SKSettingsSubfrom.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA3DB61A716CA50013C0E4 /* SKSettingsSubfrom.m */; };
 		14EA3DBA1A7176870013C0E4 /* SKCustomNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14EA3DB91A7176870013C0E4 /* SKCustomNavigationController.m */; };
 		14ECEA471A6D19B000653B5A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14ECEA461A6D19B000653B5A /* main.m */; };
@@ -55,12 +54,7 @@
 
 /* Begin PBXFileReference section */
 		140AAFAA1A6E7DB20003F905 /* Forecast.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Forecast.xcdatamodel; sourceTree = "<group>"; };
-		140AAFAC1A6E7DD50003F905 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Forecast.h; path = Classes/Forecast.h; sourceTree = "<group>"; };
-		140AAFAD1A6E7DD50003F905 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Forecast.m; path = Classes/Forecast.m; sourceTree = "<group>"; };
-		140AAFAF1A6E7DD60003F905 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = City.h; path = Classes/City.h; sourceTree = "<group>"; };
-		140AAFB01A6E7DD60003F905 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = City.m; path = Classes/City.m; sourceTree = "<group>"; };
-		142720DD1A6FBC200003535D /* Future.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Future.h; path = Classes/Future.h; sourceTree = "<group>"; };
-		142720DE1A6FBC200003535D /* Future.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Future.m; path = Classes/Future.m; sourceTree = "<group>"; };
+		141154DC1A7B82810075616D /* Forecast_v1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Forecast_v1.1.xcdatamodel; sourceTree = "<group>"; };
 		142872B41A72548E00B4BA52 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		1443E2411A6E6CFF0002A9B9 /* STRV-Forecast-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "STRV-Forecast-Prefix.pch"; sourceTree = "<group>"; };
 		1443E2421A6E743F0002A9B9 /* SKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKSettings.h; path = Classes/SKSettings.h; sourceTree = "<group>"; };
@@ -82,6 +76,10 @@
 		14BBB2371A7148FB00638A57 /* UICustomSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UICustomSearchBar.m; path = Classes/UICustomSearchBar.m; sourceTree = "<group>"; };
 		14CB071D1A727E80008BEE70 /* Climacons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Climacons.h; path = ../Climacons.h; sourceTree = "<group>"; };
 		14CB071E1A727F93008BEE70 /* Climacons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Climacons.ttf; sourceTree = "<group>"; };
+		14CBA80C1A7BC6AC002CE313 /* City.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
+		14CBA80D1A7BC6AC002CE313 /* City.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
+		14CBA80F1A7BC6AD002CE313 /* Forecast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Forecast.h; sourceTree = "<group>"; };
+		14CBA8101A7BC6AD002CE313 /* Forecast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Forecast.m; sourceTree = "<group>"; };
 		14EA3DB51A716CA50013C0E4 /* SKSettingsSubfrom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKSettingsSubfrom.h; sourceTree = "<group>"; };
 		14EA3DB61A716CA50013C0E4 /* SKSettingsSubfrom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SKSettingsSubfrom.m; sourceTree = "<group>"; };
 		14EA3DB81A7176870013C0E4 /* SKCustomNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SKCustomNavigationController.h; path = Classes/SKCustomNavigationController.h; sourceTree = "<group>"; };
@@ -137,6 +135,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		141154E41A7B84FA0075616D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				14CBA80F1A7BC6AD002CE313 /* Forecast.h */,
+				14CBA8101A7BC6AD002CE313 /* Forecast.m */,
+				14CBA80C1A7BC6AC002CE313 /* City.h */,
+				14CBA80D1A7BC6AC002CE313 /* City.m */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
 		149DEEB21A6FA8B00050A54E /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,12 +239,7 @@
 		14ECEA6D1A6D1A0900653B5A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				142720DD1A6FBC200003535D /* Future.h */,
-				142720DE1A6FBC200003535D /* Future.m */,
-				140AAFAF1A6E7DD60003F905 /* City.h */,
-				140AAFB01A6E7DD60003F905 /* City.m */,
-				140AAFAC1A6E7DD50003F905 /* Forecast.h */,
-				140AAFAD1A6E7DD50003F905 /* Forecast.m */,
+				141154E41A7B84FA0075616D /* Core Data */,
 				1443E2421A6E743F0002A9B9 /* SKSettings.h */,
 				1443E2431A6E743F0002A9B9 /* SKSettings.m */,
 				14ECEA751A6D3C6700653B5A /* SKWWOAPI.h */,
@@ -464,17 +468,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14CBA8111A7BC6AD002CE313 /* Forecast.m in Sources */,
 				14A12CD61A70FAF500398A2A /* SKSearchCitiesViewController.m in Sources */,
 				14ECEA831A6D854A00653B5A /* SKTodayViewController.m in Sources */,
 				14ECEA891A6D858D00653B5A /* SKForecastViewController.m in Sources */,
-				140AAFB11A6E7DD60003F905 /* City.m in Sources */,
-				142720DF1A6FBC200003535D /* Future.m in Sources */,
 				14ECEA4A1A6D19B000653B5A /* AppDelegate.m in Sources */,
 				14EA3DB71A716CA50013C0E4 /* SKSettingsSubfrom.m in Sources */,
 				140AAFAB1A6E7DB20003F905 /* Forecast.xcdatamodeld in Sources */,
 				14ECEA471A6D19B000653B5A /* main.m in Sources */,
-				140AAFAE1A6E7DD50003F905 /* Forecast.m in Sources */,
 				1443E2441A6E743F0002A9B9 /* SKSettings.m in Sources */,
+				14CBA80E1A7BC6AC002CE313 /* City.m in Sources */,
 				14ECEA861A6D857100653B5A /* SKSettingsViewController.m in Sources */,
 				14ECEA7F1A6D653400653B5A /* WorldWeatherOnline.m in Sources */,
 				14BBB2381A7148FB00638A57 /* UICustomSearchBar.m in Sources */,
@@ -709,6 +712,7 @@
 		140AAFA91A6E7DB20003F905 /* Forecast.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				141154DC1A7B82810075616D /* Forecast_v1.1.xcdatamodel */,
 				140AAFAA1A6E7DB20003F905 /* Forecast.xcdatamodel */,
 			);
 			currentVersion = 140AAFAA1A6E7DB20003F905 /* Forecast.xcdatamodel */;

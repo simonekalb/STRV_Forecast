@@ -2,7 +2,7 @@
 //  City.m
 //  STRV_Forecast
 //
-//  Created by Simone Kalb on 20/01/15.
+//  Created by Simone Kalb on 30/01/15.
 //  Copyright (c) 2015 Simone Kalb. All rights reserved.
 //
 
@@ -12,10 +12,11 @@
 
 @implementation City
 
-@dynamic name;
 @dynamic latitude;
 @dynamic longitude;
-@dynamic detail;
+@dynamic name;
+@dynamic state;
 @dynamic weatherURL;
+@dynamic forecast;
 
 @end

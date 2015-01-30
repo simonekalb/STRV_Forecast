@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -200,7 +199,7 @@
                                     <rect key="frame" x="143" y="287" width="87" height="26"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-rr-1OU">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eSQ-rr-1OU">
                                 <rect key="frame" x="182" y="413" width="235" height="30"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
                                 <state key="normal" title="Share">
@@ -288,18 +287,18 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Vs2-Dt-lW6"/>
                                 <exclude reference="jC7-bu-ova"/>
                                 <exclude reference="qQg-cf-JMS"/>
-                                <exclude reference="Vs2-Dt-lW6"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="constraints">
+                                <include reference="Vs2-Dt-lW6"/>
                                 <exclude reference="XrL-of-gxn"/>
                                 <exclude reference="ZzZ-et-IfH"/>
                                 <include reference="jC7-bu-ova"/>
                                 <include reference="qQg-cf-JMS"/>
-                                <include reference="Vs2-Dt-lW6"/>
                             </mask>
                         </variation>
                     </view>

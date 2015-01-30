@@ -8,6 +8,7 @@
 
 #import "SKCitiesViewController.h"
 #import "SKTableViewCell.h"
+#import "Forecast.h"
 #import "City.h"
 
 @interface SKCitiesViewController ()
@@ -28,8 +29,11 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+
+    // Find all cities in database
     _cities = [NSMutableArray new];
     _cities = [[City MR_findAll] mutableCopy];
+    
     [_tableView reloadData];
 }
 
@@ -60,10 +64,16 @@
     }
     City *currentCity = [_cities objectAtIndex:indexPath.row];
     
+    // Day of the week in this case becomes city name
     cell.dayOfWeek.text = [currentCity.name componentsSeparatedByString:@","][0];
-    cell.weatherCondition.text  = @"Sunny";
-    [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
-    cell.temperature.text  = @"12°";
+    // First element has current condition in it
+    Forecast *currentCondition = [currentCity.forecast anyObject];
+    cell.weatherCondition.text  = currentCondition.condition;
+    
+    Temperature currentTemperatureUnits = [SETTINGS retrieveBoolForKey:@"tempUnits"];
+    cell.temperature.text  = [NSString stringWithFormat:@"%@°",
+                              [SETTINGS chooseTemperature: currentTemperatureUnits
+                                                forObject:currentCondition]];
     
     return cell;
 }

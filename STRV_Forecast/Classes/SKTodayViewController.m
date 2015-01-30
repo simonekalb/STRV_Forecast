@@ -84,7 +84,7 @@
         case kCLAuthorizationStatusRestricted:
         case kCLAuthorizationStatusDenied:
         {
-            // do some error handling
+            // TODO - Add HUD
         }
             break;
         default:{
@@ -144,11 +144,12 @@
     
     /* I don't want all cities named "London", I want only the currentCity */
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"city CONTAINS[cd] %@", self.locationName];
-    NSArray * allCurrentCities = [Forecast MR_findAllWithPredicate:predicate];
+    NSArray * allCurrentCities = [City MR_findAllWithPredicate:predicate];
     
     if([allCurrentCities count] > 0) {
-        Forecast *currentForecast = [allCurrentCities firstObject];
-        [self showConditions:currentForecast];
+        City *currentCity = [allCurrentCities firstObject];
+        Forecast *currentConditions   =  [currentCity.forecast anyObject];
+        [self showConditions:currentConditions];
     } else
         [self resetCondition];
 }
