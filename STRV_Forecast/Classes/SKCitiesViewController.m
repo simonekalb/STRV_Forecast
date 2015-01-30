@@ -8,7 +8,6 @@
 
 #import "SKCitiesViewController.h"
 #import "SKTableViewCell.h"
-#import "Forecast.h"
 #import "City.h"
 
 @interface SKCitiesViewController ()
@@ -19,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _cities = [NSMutableArray new];
+    _cities = [[City MR_findAll] mutableCopy];
     
     NSString* name = [[SKTableViewCell class] description];
     UINib* nib = [UINib nibWithNibName:name bundle:[NSBundle mainBundle]];
@@ -29,11 +30,6 @@
 
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    // Find all cities in database
-    _cities = [NSMutableArray new];
-    _cities = [[City MR_findAll] mutableCopy];
-    
     [_tableView reloadData];
 }
 
@@ -64,16 +60,10 @@
     }
     City *currentCity = [_cities objectAtIndex:indexPath.row];
     
-    // Day of the week in this case becomes city name
     cell.dayOfWeek.text = [currentCity.name componentsSeparatedByString:@","][0];
-    // First element has current condition in it
-    Forecast *currentCondition = [currentCity.forecast anyObject];
-    cell.weatherCondition.text  = currentCondition.condition;
-    
-    Temperature currentTemperatureUnits = [SETTINGS retrieveBoolForKey:@"tempUnits"];
-    cell.temperature.text  = [NSString stringWithFormat:@"%@°",
-                              [SETTINGS chooseTemperature: currentTemperatureUnits
-                                                forObject:currentCondition]];
+    cell.weatherCondition.text  = @"Sunny";
+    [cell.icon setImage:[UIImage imageNamed:@"WInd_Big"]];
+    cell.temperature.text  = @"12°";
     
     return cell;
 }
@@ -86,9 +76,9 @@
 
         // Deleting an Entity with MagicalRecord
         [cityToRemove MR_deleteEntity];
+        [SETTINGS saveContext];
         [_cities removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        [SETTINGS saveContext];
     }
 }
 
@@ -114,12 +104,7 @@
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDestructive title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
-        City *cityToRemove = _cities[indexPath.row];
-        
-        // Deleting an Entity with MagicalRecord
-        [cityToRemove MR_deleteEntity];
         [_cities removeObjectAtIndex:indexPath.row];
-        [SETTINGS saveContext];
         [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
     }];
     deleteAction.backgroundColor = ORANGE;
