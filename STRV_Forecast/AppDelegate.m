@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+
 #import <Crashlytics/Crashlytics.h>
+
 
 @interface AppDelegate ()
 
@@ -17,8 +19,25 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    // CocoaLumberJack initialization
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+    
+    // Setting up the Crashlytics Framework
     [Crashlytics startWithAPIKey:@"6e68f9f3d4c91ed73797374f66f768f2ba6730f9"];
+
+    // Setting up the Magical Record Library
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"Forecast"];
+    
+    // Customizing Navigation Bar and stuff
+    [UINavigationBar appearance].barTintColor = [UIColor whiteColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      LIGHT_GREY, NSForegroundColorAttributeName,
+      [SETTINGS getSemiboldFontWithSize:21],
+      NSFontAttributeName, nil]];
+    
     return YES;
 }
 

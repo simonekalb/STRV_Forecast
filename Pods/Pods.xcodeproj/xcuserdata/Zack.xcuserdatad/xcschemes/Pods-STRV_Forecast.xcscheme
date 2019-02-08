@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AA6A082C8E615C19092167E6"
+               BlueprintIdentifier = "88822010E2354C5915130772"
                BuildableName = "libPods-STRV_Forecast.a"
                BlueprintName = "Pods-STRV_Forecast"
                ReferencedContainer = "container:Pods.xcodeproj">

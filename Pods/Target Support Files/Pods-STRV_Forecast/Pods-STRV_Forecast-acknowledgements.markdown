@@ -138,6 +138,30 @@ Confidentiality. The Application and related information that Licensor provides 
 Disclaimer. THE APPLICATION IS A TEST VERSION THAT IS MADE AVAILABLE TO YOU FOR TESTING AND EVALUATION PURPOSES ONLY. THE APPLICATION IS NOT READY FOR COMMERCIAL RELEASE AND MAY CONTAIN BUGS, ERRORS AND DEFECTS. ACCORDINGLY, THE APPLICATION IS PROVIDED “AS IS,” WITH ALL FAULTS, DEFECTS AND ERRORS, AND WITHOUT WARRANTY OF ANY KIND. LICENSOR AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES (EXPRESS, IMPLIED, ARISING BY LAW OR OTHERWISE) REGARDING THE APPLICATION AND ITS PERFORMANCE OR SUITABILITY FOR YOUR INTENDED USE, INCLUDING ANY IMPLIED WARRANTY OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NONINFRINGEMENT. Limitation of Liability. EXCEPT TO THE EXTENT PROHIBITED BY LAW, IN NO EVENT WILL LICENSOR OR ITS SUPPLIERS BE LIABLE (UNDER ANY THEORY OF LIABILITY) FOR PERSONAL INJURY OR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL OR SPECIAL DAMAGES (INCLUDING FOR LOSS OF DATA, LOSS OF CONTENT, LOSS OF IN-APPLICATION FEATURES, LOSS OF PROFITS, OR BUSINESS INTERRUPTION) ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE APPLICATION, EVEN IF LICENSOR AND/OR ITS SUPPLIERS HAS/HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE FOREGOING LIMITATIONS OF LIABILITY, SO THESE LIMITATIONS MAY NOT APPLY TO YOU. IN NO EVENT SHALL LICENSOR AND ITS SUPPLIERS’ AGGREGATE LIABILITY ARISING FROM YOUR USE OR INABILITY TO USE THE APPLICATION EXCEED FIFTY UNITED STATES DOLLARS (US $50.00).
 
 
+## FXForms
+
+FXForms
+
+version 1.2.11, January 19th, 2015
+
+Copyright (C) 2014 Charcoal Design
+
+This software is provided 'as-is', without any express or implied
+warranty.  In no event will the authors be held liable for any damages
+arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose,
+including commercial applications, and to alter it and redistribute it
+freely, subject to the following restrictions:
+
+1. The origin of this software must not be misrepresented; you must not
+   claim that you wrote the original software. If you use this software
+   in a product, an acknowledgment in the product documentation would be
+   appreciated but is not required.
+2. Altered source versions must be plainly marked as such, and must not be
+   misrepresented as being the original software.
+3. This notice may not be removed or altered from any source distribution.
+
 ## MagicalRecord
 
  Copyright (c) 2010, Magical Panda Software, LLC

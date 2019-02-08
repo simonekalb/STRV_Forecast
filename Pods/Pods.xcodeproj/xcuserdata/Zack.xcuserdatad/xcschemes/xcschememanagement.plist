@@ -19,6 +19,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-STRV_Forecast-FXForms.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-STRV_Forecast-MagicalRecord.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0FC20EB4E5BC05BF5FFBBCF3</key>
+		<key>4B6561DDEED895A6A6E92DDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>21D2DAC620EB2394832BAF21</key>
+		<key>50A2E2ABFDC4FE7ACCE1396B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6D0F4BD46918ECB08D969806</key>
+		<key>84B566A371B3DD8354048246</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>788159F78ED02BB659D65FD5</key>
+		<key>88822010E2354C5915130772</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AA6A082C8E615C19092167E6</key>
+		<key>CD6AF2D44F06C81A0175954A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0200884E281D5BE5063CAF5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
